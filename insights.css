@@ -1,0 +1,420 @@
+/* ============================================================
+   OBSEDIAN — INSIGHTS HUB STYLES
+   insights.css
+   Companion to styles.css — import AFTER it in index.html.
+   ============================================================ */
+
+/* ── SECTION SHELL ────────────────────────────────────────── */
+.insights {
+  background: var(--paper);
+  border-top: var(--border-thick);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Diagonal red stripe accent (mirrors hero but subtler) */
+.insights::after {
+  content: '';
+  position: absolute;
+  top: -8%; right: -4%;
+  width: 40%; height: 120%;
+  background: var(--red);
+  transform: skewX(-8deg);
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+/* Section header overrides for insights */
+.insights .section-label {
+  background: var(--red);
+  color: var(--white);
+}
+
+/* ── SECTION META BAR (live badge + timestamp) ────────────── */
+.insights-meta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.insights-live-badge {
+  display: none;                /* shown via JS when live data loads */
+  font-family: var(--font-sub);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  background: var(--red);
+  color: var(--white);
+  padding: 4px 12px;
+  border: 2px solid var(--black);
+  box-shadow: 2px 2px 0 var(--black);
+  animation: live-pulse 2s ease-in-out infinite;
+}
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+.insights-timestamp {
+  font-family: var(--font-sub);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #888;
+  letter-spacing: 0.08em;
+}
+
+/* ── FILTER BAR ───────────────────────────────────────────── */
+.insights-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.insights-filter-btn {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  padding: 6px 20px;
+  border: var(--border);
+  background: var(--white);
+  color: var(--ink);
+  box-shadow: 3px 3px 0 var(--black);
+  transition: all 0.12s ease;
+  position: relative;
+}
+.insights-filter-btn::before {
+  /* Colour underline that appears on hover/active */
+  content: '';
+  position: absolute;
+  bottom: -3px; left: -3px; right: -3px;
+  height: 4px;
+  background: var(--filter-color, var(--yellow));
+  transform: scaleX(0);
+  transition: transform 0.15s ease;
+}
+.insights-filter-btn:hover::before,
+.insights-filter-btn.active::before { transform: scaleX(1); }
+
+.insights-filter-btn:hover,
+.insights-filter-btn.active {
+  background: var(--black);
+  color: var(--yellow);
+  box-shadow: 5px 5px 0 var(--yellow);
+}
+
+/* ── FEATURED HERO CARD ───────────────────────────────────── */
+.insights-featured-wrap {
+  margin-bottom: 2rem;
+}
+
+.insight-featured-link {
+  display: block;
+  background: var(--black);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-lg);
+  transition: box-shadow 0.15s, transform 0.15s;
+  text-decoration: none;
+  color: inherit;
+}
+.insight-featured-link:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translate(-3px, -3px);
+}
+
+.insight-featured-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  padding: 2rem 2.5rem;
+  align-items: center;
+}
+
+.insight-featured-left { flex: 1; }
+
+.insight-featured-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  color: var(--white);
+  margin: 0.75rem 0;
+}
+
+.insight-featured-excerpt {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.insight-featured-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Starburst decoration */
+.insight-featured-right { flex-shrink: 0; }
+
+.insight-featured-burst {
+  width: 110px; height: 110px;
+  background: var(--yellow);
+  border: 4px solid var(--white);
+  clip-path: polygon(
+    50% 0%, 61% 35%, 98% 35%, 68% 57%,
+    79% 91%, 50% 70%, 21% 91%, 32% 57%,
+    2%  35%, 39% 35%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  color: var(--black);
+  text-align: center;
+  line-height: 1.1;
+  animation: float 3.5s ease-in-out infinite;
+}
+
+/* ── GRID ─────────────────────────────────────────────────── */
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+/* ── INSIGHT CARD ─────────────────────────────────────────── */
+.insight-card {
+  background: var(--white);
+  border: var(--border-thick);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.15s, transform 0.15s;
+  position: relative;
+  overflow: hidden;
+}
+.insight-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translate(-3px, -3px);
+}
+
+/* Top colour strip per category */
+.insight-card[data-tag="community"]::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--yellow); }
+.insight-card[data-tag="tactics"]::before   { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--red); }
+.insight-card[data-tag="news"]::before      { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--cyan); }
+
+.insight-card-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Thumbnail (shown for RSS articles that provide one) */
+.insight-thumb {
+  width: 100%;
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  border-bottom: var(--border);
+  flex-shrink: 0;
+}
+
+.insight-card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.5rem;
+}
+
+.insight-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+/* Category badge */
+.insight-cat-badge {
+  font-family: var(--font-sub);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 3px 10px;
+  border: 1.5px solid var(--black);
+  display: inline-block;
+  white-space: nowrap;
+  color: var(--black);
+  text-transform: uppercase;
+}
+
+/* Live indicator dot */
+.insight-live-dot {
+  font-size: 0.6rem;
+  color: var(--red);
+  animation: live-pulse 1.5s ease-in-out infinite;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.insight-card-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  color: var(--ink);
+  flex-grow: 0;
+}
+
+.insight-card-excerpt {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.5;
+  font-weight: 700;
+  flex: 1;
+}
+
+.insight-card-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.insight-source-chip {
+  font-family: var(--font-sub);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background: var(--black);
+  color: var(--yellow);
+  padding: 2px 8px;
+  display: inline-block;
+  white-space: nowrap;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.insight-card-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.insight-date,
+.insight-readtime,
+.insight-votes {
+  font-family: var(--font-sub);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #999;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+.insight-votes { color: var(--red); font-weight: 700; }
+
+/* ── SKELETON LOADER ──────────────────────────────────────── */
+.insight-skeleton {
+  background: var(--white);
+  border: var(--border-thick);
+  box-shadow: var(--shadow);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skel-tag,
+.skel-title,
+.skel-excerpt,
+.skel-meta {
+  background: linear-gradient(90deg, #e8e8e4 25%, #f5f5f0 50%, #e8e8e4 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 2px;
+}
+.skel-tag     { height: 18px; width: 100px; }
+.skel-title   { height: 22px; width: 90%; }
+.skel-excerpt { height: 14px; width: 100%; }
+.skel-meta    { height: 14px; width: 60%; margin-top: 0.5rem; }
+.skel-short   { width: 65% !important; }
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── EMPTY STATE ──────────────────────────────────────────── */
+.insight-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  border: var(--border-thick);
+  border-style: dashed;
+  background: var(--white);
+}
+.insight-empty-icon { font-size: 3rem; margin-bottom: 0.75rem; }
+.insight-empty p {
+  font-family: var(--font-sub);
+  font-weight: 700;
+  font-size: 1rem;
+  color: #888;
+}
+
+/* ── LOAD MORE ────────────────────────────────────────────── */
+.insights-load-more-wrap {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+#insightsLoadMore {
+  display: none;
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 1080px) {
+  .insights-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .insights-grid { grid-template-columns: 1fr; }
+
+  .insight-featured-inner {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+  .insight-featured-right { display: none; }
+  .insight-featured-title { font-size: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .insights-filter-bar { gap: 0.4rem; }
+  .insights-filter-btn { font-size: 0.85rem; padding: 5px 14px; }
+}
+
+/* ── STAGGER DELAYS (grid items) ──────────────────────────── */
+.insight-card:nth-child(1) { transition-delay: 0s;    }
+.insight-card:nth-child(2) { transition-delay: 0.08s; }
+.insight-card:nth-child(3) { transition-delay: 0.16s; }
+.insight-card:nth-child(4) { transition-delay: 0.24s; }
+.insight-card:nth-child(5) { transition-delay: 0.32s; }
+.insight-card:nth-child(6) { transition-delay: 0.40s; }
+.insight-card:nth-child(7) { transition-delay: 0.48s; }
+.insight-card:nth-child(8) { transition-delay: 0.56s; }
+.insight-card:nth-child(9) { transition-delay: 0.64s; }

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Obsedian — Your Digital Studio. CGI & 3D Visualization, Immersive XR Experiences, Post-Production, and Growth Strategy for Indian SMEs and D2C brands." />
+  <meta property="og:title" content="Obsedian — Your Digital Studio" />
+  <meta property="og:description" content="High-impact digital production for Indian SMEs and D2C startups. CGI, Web-AR, Films & Performance Marketing." />
+  <title>Obsedian — Your Digital Studio</title>
+
+  <!-- Google Fonts: Bangers (display), Comic Neue (body), Oswald (subheadings) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,400;0,700;1,400&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="insights.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--  CUSTOM CURSOR                                          -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--  NAV                                                    -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-box">OBS</span><span class="logo-dot">●</span><span class="logo-text">EDIAN</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#insights">INSIGHTS</a></li>
+        <li><a href="#pricing">PRICING</a></li>
+        <li><a href="#contact" class="nav-cta">LET'S TALK →</a></li>
+      </ul>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--  MOBILE MENU OVERLAY                                    -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#services" class="mm-link">SERVICES</a></li>
+      <li><a href="#insights" class="mm-link">INSIGHTS</a></li>
+      <li><a href="#pricing" class="mm-link">PRICING</a></li>
+      <li><a href="#contact" class="mm-link mm-cta">LET'S TALK →</a></li>
+    </ul>
+  </div>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!--  HERO                                                   -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section class="hero" id="hero">
+      <div class="hero-halftone"></div>
+      <div class="hero-zigzag-top"></div>
+
+      <div class="hero-inner container">
+        <div class="hero-badge">⚡ INDIA'S BOLDEST DIGITAL STUDIO ⚡</div>
+        <h1 class="hero-headline">
+          <span class="line-1">WE MAKE</span>
+          <span class="line-2 hero-accent">BRANDS</span>
+          <span class="line-3">IMPOSSIBLE<br>TO IGNORE.</span>
+        </h1>
+        <p class="hero-sub">CGI · XR · FILMS · GROWTH MARKETING<br>Built for Indian SMEs that mean business.</p>
+        <div class="hero-actions">
+          <a href="#services" class="btn btn-primary">SEE OUR WORK</a>
+          <a href="#contact" class="btn btn-outline">GET A FREE AUDIT →</a>
+        </div>
+      </div>
+
+      <!-- Floating comic-style callout bubbles -->
+      <div class="bubble bubble-1 reveal-pop">3.8x<br><small>ROAS</small></div>
+      <div class="bubble bubble-2 reveal-pop">120+<br><small>PROJECTS</small></div>
+      <div class="speech-burst reveal-pop">WOW<br>FACTOR<br>✓</div>
+      <div class="hero-zigzag-bottom"></div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!--  TICKER TAPE                                            -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <div class="ticker-wrap" aria-hidden="true">
+      <div class="ticker-track" id="tickerTrack">
+        <!-- Populated by app.js -->
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!--  STATS BAR                                              -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section class="stats-bar">
+      <div class="container stats-grid" id="statsGrid">
+        <!-- Populated by app.js -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!--  SERVICES                                               -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">WHAT WE DO</div>
+          <h2 class="section-title">OUR <span class="text-accent-red">SUPER</span>POWERS</h2>
+          <p class="section-sub">Four weapons in our arsenal. Infinite ways to win for your brand.</p>
+        </div>
+        <div class="services-grid" id="servicesGrid">
+          <!-- Populated by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!--  INSIGHTS HUB                                           -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section class="section insights" id="insights">
+      <div class="container">
+
+        <!-- Header -->
+        <div class="section-header">
+          <div class="section-label">BRAND BUILDING INTELLIGENCE</div>
+          <h2 class="section-title">COMMUNITY <span class="text-accent-red">INSIGHTS</span> & NEWS</h2>
+          <p class="section-sub">Live discussions from Reddit · Industry articles · Expert tactics.<br>The brand building signal, filtered for Indian marketers.</p>
+        </div>
+
+        <!-- Meta bar: live badge + timestamp -->
+        <div class="insights-meta-bar">
+          <span class="insights-live-badge" id="insightsLiveBadge">● LIVE</span>
+          <span class="insights-timestamp" id="insightsTimestamp"></span>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="insights-filter-bar" id="insightsFilterBar">
+          <button class="insights-filter-btn active" data-tag="all" style="--filter-color: var(--yellow);">
+            ALL TOPICS
+          </button>
+          <button class="insights-filter-btn" data-tag="community" style="--filter-color: var(--yellow);">
+            💬 Community Discussions
+          </button>
+          <button class="insights-filter-btn" data-tag="tactics" style="--filter-color: var(--red);">
+            ⚡ Expert Tactics
+          </button>
+          <button class="insights-filter-btn" data-tag="news" style="--filter-color: var(--cyan);">
+            📡 Industry News
+          </button>
+        </div>
+
+        <!-- Featured Hero Card — populated by insights.js -->
+        <div class="insights-featured-wrap" id="insightsFeatured"></div>
+
+        <!-- Grid — populated by insights.js -->
+        <div class="insights-grid" id="insightsGrid">
+          <!-- Skeleton loaders shown while fetching -->
+        </div>
+
+        <!-- Load More -->
+        <div class="insights-load-more-wrap">
+          <button class="btn btn-outline" id="insightsLoadMore"
+                  style="border-color: var(--black); color: var(--black); box-shadow: 5px 5px 0 var(--black);">
+            LOAD MORE ↓
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!--  PRICING                                                -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section class="section pricing" id="pricing">
+      <div class="pricing-halftone"></div>
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">SME STARTER PACKAGES</div>
+          <h2 class="section-title">CLEAR <span class="text-accent-yellow">PRICING</span>.</h2>
+          <p class="section-sub">No hidden fees — straight-up pricing, no nonsense.<br>No vague "let's get on a call" runaround. Start here. Scale fast.</p>
+        </div>
+        <div class="pricing-grid" id="pricingGrid">
+          <!-- Populated by app.js -->
+        </div>
+        <p class="pricing-note">* All packages are starting points. Custom scopes quoted within 24 hours.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!--  CONTACT                                                -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section class="section contact" id="contact">
+      <div class="container contact-layout">
+
+        <!-- Left copy panel -->
+        <div class="contact-copy">
+          <div class="section-label">START HERE</div>
+          <h2 class="contact-title">READY TO<br><span class="text-accent-yellow">STAND OUT?</span></h2>
+          <p class="contact-desc">Drop us a brief and we'll come back with a strategy doc and quote — no strings attached. Our typical response time is under 4 hours.</p>
+          <div class="contact-info" id="contactInfo">
+            <!-- Populated by app.js -->
+          </div>
+          <div class="contact-social" id="contactSocial">
+            <!-- Populated by app.js -->
+          </div>
+        </div>
+
+        <!-- Right form panel -->
+        <div class="contact-form-wrap">
+          <div class="form-panel">
+            <div class="form-panel-header">SEND THE SIGNAL</div>
+            <form class="contact-form" id="contactForm" method="POST">
+              <!-- action injected by app.js -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fname">YOUR NAME *</label>
+                  <input type="text" id="fname" name="name" placeholder="Tony Stark" required />
+                </div>
+                <div class="form-group">
+                  <label for="fcompany">COMPANY *</label>
+                  <input type="text" id="fcompany" name="company" placeholder="Stark Industries" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="femail">EMAIL ADDRESS *</label>
+                <input type="email" id="femail" name="email" placeholder="tony@stark.com" required />
+              </div>
+              <div class="form-group">
+                <label for="fphone">PHONE NUMBER</label>
+                <input type="tel" id="fphone" name="phone" placeholder="+91 98765 43210" />
+              </div>
+              <div class="form-group">
+                <label for="fservice">SERVICE YOU'RE INTERESTED IN *</label>
+                <select id="fservice" name="service" required>
+                  <option value="" disabled selected>— SELECT A SERVICE —</option>
+                  <!-- Options injected by app.js -->
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="fbudget">APPROXIMATE BUDGET</label>
+                <select id="fbudget" name="budget">
+                  <option value="" disabled selected>— SELECT A RANGE —</option>
+                  <option value="under-25k">Under ₹25,000</option>
+                  <option value="25k-75k">₹25,000 – ₹75,000</option>
+                  <option value="75k-2l">₹75,000 – ₹2,00,000</option>
+                  <option value="above-2l">Above ₹2,00,000</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="fmessage">TELL US ABOUT YOUR PROJECT *</label>
+                <textarea id="fmessage" name="message" rows="4" placeholder="I need CGI renders for our new product launch..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full" id="formSubmitBtn">
+                LAUNCH THE BRIEF 🚀
+              </button>
+              <div class="form-status" id="formStatus"></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--  FOOTER                                                 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <span class="logo-box">OBS</span><span class="logo-dot">●</span><span class="logo-text">EDIAN</span>
+        <p>YOUR DIGITAL STUDIO</p>
+      </div>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#insights">Insights</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-copy">
+        © <span id="footerYear"></span> Obsedian Studio. All rights reserved.<br>
+        Made with ☕ + 🎨 in Mumbai.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts — data first, then app logic -->
+  <script src="data.js"></script>
+  <script src="insights-data.js"></script>
+  <script src="app.js"></script>
+  <script src="insights.js"></script>
+
+</body>
+</html>
