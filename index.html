@@ -103,20 +103,17 @@
   }
 </script>
 <style>
-  /* Material Symbols */
   .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     vertical-align: middle;
   }
   
-  /* Base Typography */
   body {
     font-family: 'Hanken Grotesk', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
   
-  /* Custom Buttons */
   .btn-primary {
     background-color: #ffe000;
     color: #716300;
@@ -133,9 +130,11 @@
     gap: 8px;
     cursor: pointer;
     letter-spacing: 0.02em;
+    text-decoration: none;
   }
   .btn-primary:hover {
     background-color: #fffcff;
+    color: #131313;
   }
   
   .btn-secondary {
@@ -154,13 +153,13 @@
     cursor: pointer;
     background: transparent;
     letter-spacing: 0.02em;
+    text-decoration: none;
   }
   .btn-secondary:hover {
     background-color: #fffcff;
     color: #131313;
   }
   
-  /* Power Cards */
   .power-card {
     background-color: #1A1A1A;
     border: 1px solid #353535;
@@ -180,12 +179,11 @@
     transition: all 300ms ease;
   }
   
-  /* Input Brutal Style */
   .input-brutal {
     background-color: #000000;
     border: none;
-    border-bottom: 2px solid #fffcff;
-    color: #fffcff;
+    border-bottom: 2px solid #000000;
+    color: #000000;
     font-family: 'Hanken Grotesk', sans-serif;
     font-size: 16px;
     line-height: 24px;
@@ -196,10 +194,10 @@
     border-radius: 0;
   }
   .input-brutal:focus {
-    border-bottom-color: #ffe000;
+    border-bottom-color: #fffcff;
   }
   .input-brutal::placeholder {
-    color: #6b6b6b;
+    color: #888888;
   }
   
   .input-label {
@@ -208,15 +206,14 @@
     line-height: 20px;
     letter-spacing: 0.05em;
     font-weight: 500;
-    color: #cec6ab;
+    color: #000000;
     text-transform: uppercase;
     margin-bottom: 8px;
     display: block;
   }
   
-  /* Custom select arrow */
   select.input-brutal {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffe000'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000000'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 0 center;
     background-size: 20px;
@@ -226,12 +223,10 @@
     padding-right: 24px;
   }
   
-  /* Form states */
   .form-state-hidden {
     display: none !important;
   }
   
-  /* Spin animation */
   @keyframes spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
@@ -240,7 +235,6 @@
     animation: spin 1s linear infinite;
   }
   
-  /* Ticker scroll */
   @keyframes infinite-scroll {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
@@ -255,7 +249,6 @@
     white-space: nowrap;
   }
   
-  /* Responsive Hero */
   @media (max-width: 768px) {
     .btn-primary, .btn-secondary {
       font-size: 20px;
@@ -270,7 +263,6 @@
     }
   }
   
-  /* Line clamp */
   .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -278,15 +270,17 @@
     overflow: hidden;
   }
   
-  /* Smooth scroll */
   html {
     scroll-behavior: smooth;
   }
   
-  /* Selection */
   ::selection {
     background-color: #ffe000;
     color: #716300;
+  }
+  
+  a.no-underline {
+    text-decoration: none !important;
   }
 </style>
 </head>
@@ -302,18 +296,17 @@
       <a class="text-on-surface font-body-md hover:text-primary-fixed transition-colors duration-200" href="#services">Services</a>
       <a class="text-on-surface font-body-md hover:text-primary-fixed transition-colors duration-200" href="#insights">Insights</a>
       <a class="text-on-surface font-body-md hover:text-primary-fixed transition-colors duration-200" href="#pricing">Pricing</a>
-      <a class="bg-primary-container text-on-primary-container px-6 py-2 font-mono text-sm uppercase font-bold hover:scale-95 transition-transform inline-block" href="#contact" style="font-family: 'JetBrains Mono', monospace;">Let's Talk</a>
+      <a class="bg-primary-container text-on-primary-container px-6 py-2 font-mono text-sm uppercase font-bold hover:scale-95 transition-transform inline-block" href="#contact" style="font-family: 'JetBrains Mono', monospace; text-decoration: none;">Let's Talk</a>
     </div>
     <button id="mobile-menu-btn" class="md:hidden text-primary p-2" aria-label="Open Menu">
       <span class="material-symbols-outlined">menu</span>
     </button>
   </div>
-  <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden md:hidden bg-background border-t border-surface-variant px-6 py-6 space-y-4">
     <a class="block text-on-surface font-body-md hover:text-primary-fixed py-2" href="#services">Services</a>
     <a class="block text-on-surface font-body-md hover:text-primary-fixed py-2" href="#insights">Insights</a>
     <a class="block text-on-surface font-body-md hover:text-primary-fixed py-2" href="#pricing">Pricing</a>
-    <a class="block bg-primary-container text-on-primary-container px-6 py-3 font-mono text-sm uppercase font-bold text-center" href="#contact" style="font-family: 'JetBrains Mono', monospace;">Let's Talk</a>
+    <a class="block bg-primary-container text-on-primary-container px-6 py-3 font-mono text-sm uppercase font-bold text-center" href="#contact" style="font-family: 'JetBrains Mono', monospace; text-decoration: none;">Let's Talk</a>
   </div>
 </nav>
 
@@ -346,7 +339,6 @@
     </div>
   </div>
 
-  <!-- Kinetic Elements -->
   <div class="hidden lg:block absolute top-20 right-0 w-1/3 h-full pointer-events-none">
     <div class="absolute top-1/2 right-10 transform -translate-y-1/2 flex flex-col items-end gap-4">
       <div class="flex items-end gap-1">
@@ -379,7 +371,6 @@
     <span class="text-on-primary-container font-headline-md uppercase italic flex items-center gap-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 32px; line-height: 40px;">
       <span class="material-symbols-outlined">bolt</span> GROWTH STRATEGY
     </span>
-    <!-- Duplicate for seamless loop -->
     <span class="text-on-primary-container font-headline-md uppercase italic flex items-center gap-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 32px; line-height: 40px;">
       <span class="material-symbols-outlined">bolt</span> IMMERSIVE EXPERIENCES (XR)
     </span>
@@ -468,7 +459,6 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <!-- Featured Article -->
       <div class="md:col-span-2 bg-background border-2 border-primary p-8 flex flex-col justify-between hover:border-primary-container transition-colors">
         <div>
           <div class="flex items-center gap-2 mb-6">
@@ -484,7 +474,6 @@
         </div>
       </div>
 
-      <!-- Side card 1 -->
       <div class="bg-surface-grey border border-surface-variant p-6 hover:border-electric-cyan transition-colors">
         <div class="flex items-center gap-2 mb-4">
           <span class="material-symbols-outlined" style="color: #00C8E0;">chat_bubble</span>
@@ -495,7 +484,6 @@
         <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; color: #cec6ab;">r/Entrepreneur • 847 upvotes</div>
       </div>
 
-      <!-- Side card 2 -->
       <div class="bg-surface-grey border border-surface-variant p-6 hover:border-primary-container transition-colors">
         <div class="flex items-center gap-2 mb-4">
           <span class="material-symbols-outlined" style="color: #ffe000;">newspaper</span>
@@ -506,14 +494,12 @@
         <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; color: #cec6ab;">Inc42 • 12 months ago</div>
       </div>
 
-      <!-- Side card 3 -->
       <div class="bg-surface-grey border border-surface-variant p-6">
         <h4 class="uppercase mb-3" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px; color: #fffcff;">HONEST BREAKDOWN OF WHAT ACTUALLY MOVED THE NEEDLE FOR OUR BRAND</h4>
         <p class="text-on-surface-variant text-sm mb-4" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 14px; line-height: 22px;">Not another 'growth hacking' post. Founder of a 7-figure D2C skincare brand breaks down the 3 brand decisions...</p>
         <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; color: #cec6ab;">r/marketing • 1.2k upvotes</div>
       </div>
 
-      <!-- Side card 4 -->
       <div class="bg-surface-grey border border-surface-variant p-6">
         <h4 class="uppercase mb-3" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px; color: #fffcff;">WHY YOUR PRODUCT PHOTOGRAPHY IS KILLING YOUR BRAND (AND CGI IS THE FIX)</h4>
         <p class="text-on-surface-variant text-sm mb-4" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 14px; line-height: 22px;">A breakdown of why Indian SMEs are switching to CGI renders for e-commerce listings — with A/B test data.</p>
@@ -533,7 +519,6 @@
 
   <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
 
-    <!-- Package 1 -->
     <div class="border border-surface-variant p-8 flex flex-col hover:border-primary-container transition-all group">
       <span class="bg-primary-container text-on-primary-container px-2 py-0.5 text-[10px] font-bold uppercase self-start mb-6" style="font-family: 'JetBrains Mono', monospace;">Most Popular</span>
       <h3 class="uppercase mb-2" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px;">CGI STARTER</h3>
@@ -544,10 +529,9 @@
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> 2 Revision Rounds</li>
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> 4K Resolution Output</li>
       </ul>
-      <button class="w-full py-3 border-2 font-bold uppercase group-hover:bg-primary-container group-hover:text-black transition-all" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #ffe000; color: #ffe000; background: transparent; cursor: pointer;">Get a Quote</button>
+      <a href="#contact" class="block text-center w-full py-3 border-2 font-bold uppercase group-hover:bg-primary-container group-hover:text-black transition-all no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #ffe000; color: #ffe000; background: transparent;">Get a Quote</a>
     </div>
 
-    <!-- Package 2 -->
     <div class="border border-surface-variant p-8 flex flex-col hover:border-electric-cyan transition-all group">
       <span class="bg-electric-cyan text-white px-2 py-0.5 text-[10px] font-bold uppercase self-start mb-6" style="font-family: 'JetBrains Mono', monospace;">Cutting Edge</span>
       <h3 class="uppercase mb-2" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px;">XR STARTER</h3>
@@ -558,10 +542,9 @@
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #00C8E0; font-size: 18px;">check</span> Mobile &amp; Desktop Ready</li>
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #00C8E0; font-size: 18px;">check</span> 3 Months Hosting</li>
       </ul>
-      <button class="w-full py-3 border-2 font-bold uppercase group-hover:bg-electric-cyan group-hover:text-black transition-all" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #00C8E0; color: #00C8E0; background: transparent; cursor: pointer;">Get a Quote</button>
+      <a href="#contact" class="block text-center w-full py-3 border-2 font-bold uppercase group-hover:bg-electric-cyan group-hover:text-black transition-all no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #00C8E0; color: #00C8E0; background: transparent;">Get a Quote</a>
     </div>
 
-    <!-- Package 3 - Featured -->
     <div class="border-2 p-8 flex flex-col hover:border-primary-container transition-all group scale-100 md:scale-105 bg-surface-container-low" style="border-color: rgba(255, 224, 0, 0.5);">
       <span class="bg-primary-container text-on-primary-container px-2 py-0.5 text-[10px] font-bold uppercase self-start mb-6" style="font-family: 'JetBrains Mono', monospace;">Best ROI</span>
       <h3 class="uppercase mb-2" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px;">PIPELINE PRO</h3>
@@ -572,10 +555,9 @@
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> 5-Step Email Sequence</li>
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> CRM Dashboard Setup</li>
       </ul>
-      <button class="w-full py-3 bg-primary-container text-black font-bold uppercase hover:bg-white transition-all" style="font-family: 'Oswald', sans-serif; font-size: 18px; border: none; cursor: pointer;">Launch Funnel</button>
+      <a href="#contact" class="block text-center w-full py-3 bg-primary-container text-black font-bold uppercase hover:bg-white transition-all no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border: none;">Launch Funnel</a>
     </div>
 
-    <!-- Package 4 -->
     <div class="border border-surface-variant p-8 flex flex-col hover:border-primary transition-all group">
       <span class="bg-surface-variant text-on-surface px-2 py-0.5 text-[10px] font-bold uppercase self-start mb-6" style="font-family: 'JetBrains Mono', monospace;">Scale Mode</span>
       <h3 class="uppercase mb-2" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px;">GROWTH STARTER</h3>
@@ -586,7 +568,7 @@
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #e2e2e2; font-size: 18px;">check</span> Weekly Performance Reports</li>
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #e2e2e2; font-size: 18px;">check</span> Dedicated Strategist</li>
       </ul>
-      <button class="w-full py-3 border-2 font-bold uppercase group-hover:bg-on-surface group-hover:text-black transition-all" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #e2e2e2; color: #e2e2e2; background: transparent; cursor: pointer;">Get a Quote</button>
+      <a href="#contact" class="block text-center w-full py-3 border-2 font-bold uppercase group-hover:bg-on-surface group-hover:text-black transition-all no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #e2e2e2; color: #e2e2e2; background: transparent;">Get a Quote</a>
     </div>
   </div>
 
@@ -603,7 +585,7 @@
       <div class="space-y-6">
         <div class="flex items-center gap-4">
           <span class="material-symbols-outlined bg-black p-3" style="color: #ffe000; border-radius: 50%;">mail</span>
-          <a href="mailto:hello@obsedian.in" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 20px; color: #716300; text-decoration: none;">hello@obsedian.in</a>
+          <a href="mailto:studio@obsedian.in" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 20px; color: #716300; text-decoration: none;">studio@obsedian.in</a>
         </div>
         <div class="flex items-center gap-4">
           <span class="material-symbols-outlined bg-black p-3" style="color: #ffe000; border-radius: 50%;">call</span>
@@ -660,7 +642,7 @@
           </div>
           <div>
             <label class="input-label" for="form-description">Tell us about your project *</label>
-            <textarea class="input-brutal h-32 resize-none" id="form-description" name="message" placeholder="I need a high-conversion sales funnel for our new product launch..." required style="font-family: 'Hanken Grotesk', sans-serif; color: #fffcff;"></textarea>
+            <textarea class="input-brutal h-32 resize-none" id="form-description" name="message" placeholder="I need a high-conversion sales funnel for our new product launch..." required style="font-family: 'Hanken Grotesk', sans-serif; color: #000000;"></textarea>
             <p class="text-[10px] mt-1 hidden" id="error-description" style="color: #FF3B3B; font-family: 'JetBrains Mono', monospace;">Project details are required (min 20 chars).</p>
           </div>
           <button class="w-full font-bold uppercase py-4 text-xl hover:bg-white transition-all transform active:scale-95 flex items-center justify-center gap-3" id="submit-btn" type="submit" style="font-family: 'Oswald', sans-serif; background-color: #ffe000; color: #000; border: none; cursor: pointer;">
@@ -669,14 +651,12 @@
         </form>
       </div>
 
-      <!-- Loading State -->
       <div class="absolute inset-0 bg-black flex-col items-center justify-center p-12 text-center form-state-hidden" id="form-loading" style="display: none;">
         <div class="w-16 h-16 border-4 border-primary-container border-t-transparent rounded-full animate-spin-custom mb-6" style="border-color: #ffe000 transparent transparent transparent;"></div>
         <p class="uppercase" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px; color: #ffe000;">Processing Your Signal...</p>
-        <p class="text-xs mt-4" style="font-family: 'JetBrains Mono', monospace; color: #cec6ab;">Transmitting data to Obsedian HQ and preparing your receipt.</p>
+        <p class="text-xs mt-4" style="font-family: 'JetBrains Mono', monospace; color: #cec6ab;">Transmitting data to studio@obsedian.in and preparing your receipt.</p>
       </div>
 
-      <!-- Success State -->
       <div class="absolute inset-0 bg-black flex-col items-center justify-center p-12 text-center form-state-hidden" id="form-success" style="display: none;">
         <span class="material-symbols-outlined mb-6" style="color: #ffe000; font-size: 72px;">check_circle</span>
         <h3 class="uppercase mb-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 36px; line-height: 44px; color: #ffe000;">BRIEF RECEIVED</h3>
@@ -684,7 +664,7 @@
         <div class="flex flex-col gap-4 w-full">
           <div class="flex items-center gap-3 p-4" style="background-color: #1f1f1f; border: 1px solid rgba(255, 224, 0, 0.2);">
             <span class="material-symbols-outlined" style="color: #ffe000;">notifications_active</span>
-            <span class="text-[10px] text-left uppercase" style="font-family: 'JetBrains Mono', monospace;">Admin Alert Triggered • Mumbai Hub</span>
+            <span class="text-[10px] text-left uppercase" style="font-family: 'JetBrains Mono', monospace;">Email Alert Triggered • studio@obsedian.in</span>
           </div>
           <div class="flex items-center gap-3 p-4" style="background-color: #1f1f1f; border: 1px solid rgba(255, 224, 0, 0.2);">
             <span class="material-symbols-outlined" style="color: #ffe000;">mark_email_read</span>
@@ -694,7 +674,6 @@
         <button class="mt-12 uppercase text-xs underline hover:text-white" onclick="resetForm()" style="font-family: 'JetBrains Mono', monospace; color: #ffe000; background: none; border: none; cursor: pointer;">Send another signal</button>
       </div>
 
-      <!-- Error State -->
       <div class="absolute inset-0 bg-black flex-col items-center justify-center p-12 text-center form-state-hidden" id="form-error" style="display: none;">
         <span class="material-symbols-outlined mb-6" style="color: #FF3B3B; font-size: 72px;">report</span>
         <h3 class="uppercase mb-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 36px; line-height: 44px; color: #FF3B3B;">SIGNAL FAILED</h3>
@@ -702,7 +681,7 @@
         <div class="p-6 text-left mb-8" style="background-color: rgba(147, 0, 10, 0.2); border: 1px solid #FF3B3B;">
           <p class="text-xs uppercase mb-2" style="font-family: 'JetBrains Mono', monospace; color: #FF3B3B;">Fallback Instruction:</p>
           <p style="font-family: 'Hanken Grotesk', sans-serif; color: #e2e2e2;">Please email your brief directly to:</p>
-          <a href="mailto:hello@obsedian.in" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 20px; color: #ffe000; text-decoration: none; margin-top: 4px; display: inline-block;">hello@obsedian.in</a>
+          <a href="mailto:studio@obsedian.in" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 20px; color: #ffe000; text-decoration: none; margin-top: 4px; display: inline-block;">studio@obsedian.in</a>
         </div>
         <button class="w-full font-bold uppercase py-4 hover:bg-primary-container transition-all" onclick="resetForm()" style="font-family: 'Oswald', sans-serif; font-size: 20px; background-color: #fffcff; color: #000; border: none; cursor: pointer;">Retry Form</button>
       </div>
@@ -712,29 +691,21 @@
 
 </main>
 
-<!-- Footer -->
+<!-- Footer (No Social Media) -->
 <footer class="bg-surface-container-lowest border-t-2 border-surface-variant py-16">
   <div class="grid grid-cols-1 md:grid-cols-12 gap-8 px-6 md:px-margin-desktop max-w-container-max mx-auto">
-    <div class="md:col-span-4">
+    <div class="md:col-span-6">
       <div class="uppercase mb-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 32px; line-height: 40px; color: #fffcff;">OBSEDIAN</div>
       <p class="mb-8" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 16px; line-height: 24px; color: #cec6ab;">YOUR DIGITAL STUDIO</p>
       <p style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #cec6ab;">For more information contact: <br/><span style="color: #fffcff; font-weight: bold;">+91 93247 42958</span></p>
     </div>
-    <div class="md:col-span-4">
+    <div class="md:col-span-6">
       <div class="uppercase mb-6" style="font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 20px; letter-spacing: 0.05em; color: #fffcff;">Navigation</div>
       <div class="flex flex-col gap-4">
         <a style="color: #cec6ab; text-decoration: none;" class="hover:text-primary transition-all" href="#services">Services</a>
         <a style="color: #cec6ab; text-decoration: none;" class="hover:text-primary transition-all" href="#insights">Insights</a>
         <a style="color: #cec6ab; text-decoration: none;" class="hover:text-primary transition-all" href="#pricing">Pricing</a>
         <a style="color: #cec6ab; text-decoration: none;" class="hover:text-primary transition-all" href="#contact">Contact</a>
-      </div>
-    </div>
-    <div class="md:col-span-4">
-      <div class="uppercase mb-6" style="font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 20px; letter-spacing: 0.05em; color: #fffcff;">Socials</div>
-      <div class="flex gap-6">
-        <a class="uppercase" style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #cec6ab; text-decoration: underline;" href="#">Instagram</a>
-        <a class="uppercase" style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #cec6ab; text-decoration: underline;" href="#">LinkedIn</a>
-        <a class="uppercase" style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #cec6ab; text-decoration: underline;" href="#">Twitter</a>
       </div>
       <div class="mt-12">
         <p style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #cec6ab;">© 2024 OBSEDIAN. All rights reserved. <br/>Made with ☕ + 🎨 in Mumbai.</p>
@@ -744,20 +715,17 @@
 </footer>
 
 <script>
-  // Mobile menu toggle
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   if (mobileBtn && mobileMenu) {
     mobileBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
-    // Close mobile menu on link click
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
     });
   }
 
-  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
@@ -770,14 +738,12 @@
     });
   });
 
-  // Ticker pause on hover
   const ticker = document.querySelector('.animate-infinite-scroll');
   if (ticker) {
     ticker.addEventListener('mouseover', () => ticker.style.animationPlayState = 'paused');
     ticker.addEventListener('mouseleave', () => ticker.style.animationPlayState = 'running');
   }
 
-  // Lead Form Logic
   const leadForm = document.getElementById('lead-form');
   const formContent = document.getElementById('form-content');
   const formLoading = document.getElementById('form-loading');
