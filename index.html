@@ -136,6 +136,9 @@
     background-color: #fffcff;
     color: #131313;
   }
+  .btn-primary:active {
+    transform: scale(0.95);
+  }
   
   .btn-secondary {
     border: 2px solid #fffcff;
@@ -159,6 +162,9 @@
     background-color: #fffcff;
     color: #131313;
   }
+  .btn-secondary:active {
+    transform: scale(0.95);
+  }
   
   .power-card {
     background-color: #1A1A1A;
@@ -179,6 +185,7 @@
     transition: all 300ms ease;
   }
   
+  /* Form Inputs - BLACK text for visibility on yellow background */
   .input-brutal {
     background-color: #000000;
     border: none;
@@ -195,11 +202,13 @@
   }
   .input-brutal:focus {
     border-bottom-color: #fffcff;
+    color: #000000;
   }
   .input-brutal::placeholder {
     color: #888888;
   }
   
+  /* Form Labels - BLACK */
   .input-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 14px;
@@ -221,12 +230,19 @@
     -moz-appearance: none;
     appearance: none;
     padding-right: 24px;
+    color: #000000;
+  }
+  select.input-brutal option {
+    background-color: #000000;
+    color: #000000;
   }
   
+  /* Form State Hidden */
   .form-state-hidden {
     display: none !important;
   }
   
+  /* Spin Animation */
   @keyframes spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
@@ -235,6 +251,7 @@
     animation: spin 1s linear infinite;
   }
   
+  /* Ticker Animation */
   @keyframes infinite-scroll {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
@@ -249,6 +266,30 @@
     white-space: nowrap;
   }
   
+  /* Click Animation for Pricing Buttons */
+  .pricing-btn {
+    transition: all 200ms ease;
+    cursor: pointer;
+  }
+  .pricing-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(255, 224, 0, 0.2);
+  }
+  .pricing-btn:active {
+    transform: scale(0.92);
+    box-shadow: 0 2px 4px rgba(255, 224, 0, 0.3);
+  }
+  
+  /* Pulse effect on pricing button click */
+  @keyframes click-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 224, 0, 0.7); }
+    100% { box-shadow: 0 0 0 20px rgba(255, 224, 0, 0); }
+  }
+  .pricing-btn.clicked {
+    animation: click-pulse 0.6s ease-out;
+  }
+  
+  /* Responsive */
   @media (max-width: 768px) {
     .btn-primary, .btn-secondary {
       font-size: 20px;
@@ -281,6 +322,15 @@
   
   a.no-underline {
     text-decoration: none !important;
+  }
+  
+  /* Highlight contact section briefly when scrolled to */
+  @keyframes highlight-flash {
+    0% { box-shadow: 0 0 0 0 rgba(255, 224, 0, 0.6); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 224, 0, 0); }
+  }
+  .form-highlight {
+    animation: highlight-flash 1.5s ease-out;
   }
 </style>
 </head>
@@ -529,7 +579,7 @@
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> 2 Revision Rounds</li>
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> 4K Resolution Output</li>
       </ul>
-      <a href="#contact" class="block text-center w-full py-3 border-2 font-bold uppercase group-hover:bg-primary-container group-hover:text-black transition-all no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #ffe000; color: #ffe000; background: transparent;">Get a Quote</a>
+      <a href="#contact" class="pricing-btn block text-center w-full py-3 border-2 font-bold uppercase group-hover:bg-primary-container group-hover:text-black transition-all no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #ffe000; color: #ffe000; background: transparent;">Get a Quote</a>
     </div>
 
     <div class="border border-surface-variant p-8 flex flex-col hover:border-electric-cyan transition-all group">
@@ -542,7 +592,7 @@
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #00C8E0; font-size: 18px;">check</span> Mobile &amp; Desktop Ready</li>
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #00C8E0; font-size: 18px;">check</span> 3 Months Hosting</li>
       </ul>
-      <a href="#contact" class="block text-center w-full py-3 border-2 font-bold uppercase group-hover:bg-electric-cyan group-hover:text-black transition-all no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #00C8E0; color: #00C8E0; background: transparent;">Get a Quote</a>
+      <a href="#contact" class="pricing-btn block text-center w-full py-3 border-2 font-bold uppercase group-hover:bg-electric-cyan group-hover:text-black transition-all no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #00C8E0; color: #00C8E0; background: transparent;">Get a Quote</a>
     </div>
 
     <div class="border-2 p-8 flex flex-col hover:border-primary-container transition-all group scale-100 md:scale-105 bg-surface-container-low" style="border-color: rgba(255, 224, 0, 0.5);">
@@ -555,7 +605,7 @@
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> 5-Step Email Sequence</li>
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> CRM Dashboard Setup</li>
       </ul>
-      <a href="#contact" class="block text-center w-full py-3 bg-primary-container text-black font-bold uppercase hover:bg-white transition-all no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border: none;">Launch Funnel</a>
+      <a href="#contact" class="pricing-btn block text-center w-full py-3 bg-primary-container text-black font-bold uppercase hover:bg-white transition-all no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border: none;">Launch Funnel</a>
     </div>
 
     <div class="border border-surface-variant p-8 flex flex-col hover:border-primary transition-all group">
@@ -568,7 +618,7 @@
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #e2e2e2; font-size: 18px;">check</span> Weekly Performance Reports</li>
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #e2e2e2; font-size: 18px;">check</span> Dedicated Strategist</li>
       </ul>
-      <a href="#contact" class="block text-center w-full py-3 border-2 font-bold uppercase group-hover:bg-on-surface group-hover:text-black transition-all no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #e2e2e2; color: #e2e2e2; background: transparent;">Get a Quote</a>
+      <a href="#contact" class="pricing-btn block text-center w-full py-3 border-2 font-bold uppercase group-hover:bg-on-surface group-hover:text-black transition-all no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #e2e2e2; color: #e2e2e2; background: transparent;">Get a Quote</a>
     </div>
   </div>
 
@@ -598,7 +648,7 @@
       </div>
     </div>
 
-    <div class="bg-black p-8 md:p-12 border-4 border-black relative min-h-[600px]">
+    <div id="contact-form-wrapper" class="bg-black p-8 md:p-12 border-4 border-black relative min-h-[600px]">
       <div id="form-content">
         <h3 class="uppercase mb-8" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 30px; line-height: 38px; color: #ffe000;">SEND THE SIGNAL</h3>
         <form action="https://formspree.io/f/xrevkgep" class="space-y-8" id="lead-form" method="POST" novalidate>
@@ -691,7 +741,7 @@
 
 </main>
 
-<!-- Footer (No Social Media) -->
+<!-- Footer (No Social Media Links) -->
 <footer class="bg-surface-container-lowest border-t-2 border-surface-variant py-16">
   <div class="grid grid-cols-1 md:grid-cols-12 gap-8 px-6 md:px-margin-desktop max-w-container-max mx-auto">
     <div class="md:col-span-6">
@@ -715,6 +765,7 @@
 </footer>
 
 <script>
+  // Mobile menu toggle
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   if (mobileBtn && mobileMenu) {
@@ -726,6 +777,7 @@
     });
   }
 
+  // Smooth scroll with click animation & form highlight
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
@@ -733,17 +785,41 @@
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
+        
+        // Pricing button click animation
+        if (this.classList.contains('pricing-btn')) {
+          this.classList.add('clicked');
+          setTimeout(() => this.classList.remove('clicked'), 600);
+        }
+        
+        // Smooth scroll to target
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        
+        // Highlight contact form when landed
+        if (href === '#contact') {
+          setTimeout(() => {
+            const formWrapper = document.getElementById('contact-form-wrapper');
+            if (formWrapper) {
+              formWrapper.classList.add('form-highlight');
+              setTimeout(() => formWrapper.classList.remove('form-highlight'), 1500);
+            }
+            // Auto-focus first input
+            const nameInput = document.getElementById('form-name');
+            if (nameInput) nameInput.focus({ preventScroll: true });
+          }, 800);
+        }
       }
     });
   });
 
+  // Ticker pause on hover
   const ticker = document.querySelector('.animate-infinite-scroll');
   if (ticker) {
     ticker.addEventListener('mouseover', () => ticker.style.animationPlayState = 'paused');
     ticker.addEventListener('mouseleave', () => ticker.style.animationPlayState = 'running');
   }
 
+  // Lead form logic
   const leadForm = document.getElementById('lead-form');
   const formContent = document.getElementById('form-content');
   const formLoading = document.getElementById('form-loading');
