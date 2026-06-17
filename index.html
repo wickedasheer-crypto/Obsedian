@@ -1,301 +1,877 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Obsedian — Your Digital Studio. CGI & 3D Visualization, Immersive XR Experiences, Post-Production, and Growth Strategy for Indian SMEs and D2C brands." />
-  <meta property="og:title" content="Obsedian — Your Digital Studio" />
-  <meta property="og:description" content="High-impact digital production for Indian SMEs and D2C startups. CGI, Web-AR, Films & Performance Marketing." />
-  <title>Obsedian — Your Digital Studio</title>
-
-  <!-- Google Fonts: Bangers (display), Comic Neue (body), Oswald (subheadings) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,400;0,700;1,400&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="insights.css" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="OBSEDIAN - India's Boldest Digital Studio. CGI, XR, Sales Pipeline & Growth Marketing built for Indian SMEs that mean business."/>
+<meta name="keywords" content="digital studio, CGI, XR, sales pipeline, growth marketing, Indian SMEs, branding"/>
+<meta name="author" content="OBSEDIAN"/>
+<meta property="og:title" content="OBSEDIAN | India's Boldest Digital Studio"/>
+<meta property="og:description" content="CGI • XR • SALES PIPELINE • GROWTH MARKETING. Built for Indian SMEs that mean business."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://obsedian.in"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="theme-color" content="#131313"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23131313'/%3E%3Ctext x='50' y='70' font-family='Oswald' font-size='70' font-weight='700' fill='%23ffe000' text-anchor='middle'%3EO%3C/text%3E%3C/svg%3E"/>
+<title>OBSEDIAN | India's Boldest Digital Studio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Hanken+Grotesk:wght@400;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "background": "#131313",
+          "tertiary-fixed-dim": "#00dce2",
+          "on-error": "#690005",
+          "tertiary-container": "#13f8ff",
+          "secondary-fixed": "#e2e2e2",
+          "primary": "#fffcff",
+          "on-secondary-container": "#b4b5b5",
+          "on-secondary-fixed": "#1a1c1c",
+          "inverse-surface": "#e2e2e2",
+          "surface-container-highest": "#353535",
+          "surface-dim": "#131313",
+          "inverse-on-surface": "#303030",
+          "primary-container": "#ffe000",
+          "surface-container": "#1f1f1f",
+          "error-container": "#93000a",
+          "on-surface": "#e2e2e2",
+          "on-tertiary-container": "#006e72",
+          "surface-container-low": "#1b1b1b",
+          "surface-grey": "#1A1A1A",
+          "on-tertiary": "#003738",
+          "secondary-fixed-dim": "#c6c6c7",
+          "primary-fixed": "#ffe33b",
+          "on-background": "#e2e2e2",
+          "secondary-container": "#454747",
+          "error-red": "#FF3B3B",
+          "surface-variant": "#353535",
+          "tertiary": "#f3ffff",
+          "inverse-primary": "#6c5e00",
+          "surface": "#131313",
+          "on-secondary": "#2f3131",
+          "error": "#ffb4ab",
+          "electric-cyan": "#00C8E0",
+          "on-primary": "#383000",
+          "tertiary-fixed": "#4bf9ff",
+          "surface-tint": "#e2c600",
+          "on-error-container": "#ffdad6",
+          "outline-variant": "#4c4732",
+          "on-surface-variant": "#cec6ab",
+          "secondary": "#c6c6c7",
+          "surface-bright": "#393939",
+          "surface-container-lowest": "#0e0e0e",
+          "outline": "#979177",
+          "on-primary-fixed": "#211b00",
+          "primary-fixed-dim": "#e2c600",
+          "on-primary-container": "#716300",
+          "surface-container-high": "#2a2a2a"
+        },
+        borderRadius: {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        spacing: {
+          "container-max": "1280px",
+          "margin-mobile": "20px",
+          "gutter": "24px",
+          "margin-desktop": "64px"
+        },
+        fontFamily: {
+          "body-md": ["Hanken Grotesk", "sans-serif"],
+          "headline-display": ["Oswald", "sans-serif"],
+          "label-mono": ["JetBrains Mono", "monospace"],
+          "headline-md": ["Oswald", "sans-serif"],
+          "headline-lg": ["Oswald", "sans-serif"],
+          "body-lg": ["Hanken Grotesk", "sans-serif"]
+        },
+        fontSize: {
+          "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+          "headline-display": ["80px", { lineHeight: "90px", letterSpacing: "-0.02em", fontWeight: "700" }],
+          "label-mono": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "500" }],
+          "headline-md": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+          "headline-lg": ["48px", { lineHeight: "56px", fontWeight: "600" }],
+          "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }]
+        }
+      },
+    },
+  }
+</script>
+<style>
+  /* Material Symbols */
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+  }
+  
+  /* Base Typography */
+  body {
+    font-family: 'Hanken Grotesk', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Custom Buttons */
+  .btn-primary {
+    background-color: #ffe000;
+    color: #716300;
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 12px 32px;
+    transition: all 300ms ease;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+  }
+  .btn-primary:hover {
+    background-color: #fffcff;
+  }
+  
+  .btn-secondary {
+    border: 2px solid #fffcff;
+    color: #fffcff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    transition: all 300ms ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    background: transparent;
+    letter-spacing: 0.02em;
+  }
+  .btn-secondary:hover {
+    background-color: #fffcff;
+    color: #131313;
+  }
+  
+  /* Power Cards */
+  .power-card {
+    background-color: #1A1A1A;
+    border: 1px solid #353535;
+    padding: 32px;
+    transition: all 300ms ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .power-card:hover {
+    border-color: #ffe000;
+  }
+  .power-card:hover .card-icon {
+    transform: scale(1.1);
+    color: #ffe000;
+  }
+  .card-icon {
+    transition: all 300ms ease;
+  }
+  
+  /* Input Brutal Style */
+  .input-brutal {
+    background-color: #000000;
+    border: none;
+    border-bottom: 2px solid #fffcff;
+    color: #fffcff;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    width: 100%;
+    padding: 8px 0;
+    outline: none;
+    transition: border-color 200ms ease;
+    border-radius: 0;
+  }
+  .input-brutal:focus {
+    border-bottom-color: #ffe000;
+  }
+  .input-brutal::placeholder {
+    color: #6b6b6b;
+  }
+  
+  .input-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    color: #cec6ab;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  /* Custom select arrow */
+  select.input-brutal {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffe000'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0 center;
+    background-size: 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 24px;
+  }
+  
+  /* Form states */
+  .form-state-hidden {
+    display: none !important;
+  }
+  
+  /* Spin animation */
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .animate-spin-custom {
+    animation: spin 1s linear infinite;
+  }
+  
+  /* Ticker scroll */
+  @keyframes infinite-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .animate-infinite-scroll {
+    animation: infinite-scroll 25s linear infinite;
+    display: flex;
+    width: max-content;
+  }
+  .animate-infinite-scroll > span {
+    padding-right: 3rem;
+    white-space: nowrap;
+  }
+  
+  /* Responsive Hero */
+  @media (max-width: 768px) {
+    .btn-primary, .btn-secondary {
+      font-size: 20px;
+      line-height: 28px;
+      padding: 10px 20px;
+      justify-content: center;
+      width: 100%;
+    }
+    h1.font-headline-display {
+      font-size: 48px !important;
+      line-height: 52px !important;
+    }
+  }
+  
+  /* Line clamp */
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Selection */
+  ::selection {
+    background-color: #ffe000;
+    color: #716300;
+  }
+</style>
 </head>
-<body>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
 
-  <!-- ═══════════════════════════════════════════════════════ -->
-  <!--  CUSTOM CURSOR                                          -->
-  <!-- ═══════════════════════════════════════════════════════ -->
-  <div class="cursor-dot" id="cursorDot"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b-2 border-surface-variant">
+  <div class="flex justify-between items-center px-6 md:px-margin-desktop py-4 max-w-container-max mx-auto">
+    <a class="font-headline-lg text-primary uppercase tracking-tighter flex items-center gap-1 text-2xl md:text-3xl" href="/">
+      OBSEDIAN
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="text-on-surface font-body-md hover:text-primary-fixed transition-colors duration-200" href="#services">Services</a>
+      <a class="text-on-surface font-body-md hover:text-primary-fixed transition-colors duration-200" href="#insights">Insights</a>
+      <a class="text-on-surface font-body-md hover:text-primary-fixed transition-colors duration-200" href="#pricing">Pricing</a>
+      <a class="bg-primary-container text-on-primary-container px-6 py-2 font-mono text-sm uppercase font-bold hover:scale-95 transition-transform inline-block" href="#contact" style="font-family: 'JetBrains Mono', monospace;">Let's Talk</a>
+    </div>
+    <button id="mobile-menu-btn" class="md:hidden text-primary p-2" aria-label="Open Menu">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-background border-t border-surface-variant px-6 py-6 space-y-4">
+    <a class="block text-on-surface font-body-md hover:text-primary-fixed py-2" href="#services">Services</a>
+    <a class="block text-on-surface font-body-md hover:text-primary-fixed py-2" href="#insights">Insights</a>
+    <a class="block text-on-surface font-body-md hover:text-primary-fixed py-2" href="#pricing">Pricing</a>
+    <a class="block bg-primary-container text-on-primary-container px-6 py-3 font-mono text-sm uppercase font-bold text-center" href="#contact" style="font-family: 'JetBrains Mono', monospace;">Let's Talk</a>
+  </div>
+</nav>
 
-  <!-- ═══════════════════════════════════════════════════════ -->
-  <!--  NAV                                                    -->
-  <!-- ═══════════════════════════════════════════════════════ -->
-  <header class="site-header" id="siteHeader">
-    <nav class="nav-inner">
-      <a href="#hero" class="nav-logo">
-        <span class="logo-box">OBS</span><span class="logo-dot">●</span><span class="logo-text">EDIAN</span>
+<main class="pt-24">
+
+<!-- Hero Section -->
+<section class="relative px-6 md:px-margin-desktop py-20 md:py-32 overflow-hidden max-w-container-max mx-auto">
+  <div class="z-10 relative">
+    <div class="inline-block bg-primary-container text-on-primary-container px-4 py-1 font-mono text-xs font-bold mb-8 uppercase tracking-widest" style="font-family: 'JetBrains Mono', monospace;">
+      ⚡ INDIA'S BOLDEST DIGITAL STUDIO ⚡
+    </div>
+    <h1 class="font-headline-display uppercase mb-6 leading-[0.9]" style="font-family: 'Oswald', sans-serif; font-weight: 700; letter-spacing: -0.02em; font-size: 80px; line-height: 90px;">
+      WE MAKE <br/>
+      <span style="color: #ffe000;">BRANDS</span> <br/>
+      IMPOSSIBLE <br/>
+      TO IGNORE.
+    </h1>
+    <p class="text-on-surface-variant mb-12 max-w-2xl" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 32px; line-height: 40px;">
+      CGI • XR • SALES PIPELINE • GROWTH MARKETING<br/>
+      <span style="font-family: 'Hanken Grotesk', sans-serif; font-size: 18px; font-weight: 400;">Built for Indian SMEs that mean business.</span>
+    </p>
+    <div class="flex flex-col md:flex-row gap-6">
+      <a class="btn-primary" href="#work">
+        SEE OUR WORK
+        <span class="material-symbols-outlined">arrow_forward</span>
       </a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#services">SERVICES</a></li>
-        <li><a href="#insights">INSIGHTS</a></li>
-        <li><a href="#pricing">PRICING</a></li>
-        <li><a href="#contact" class="nav-cta">LET'S TALK →</a></li>
-      </ul>
-      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </nav>
-  </header>
-
-  <!-- ═══════════════════════════════════════════════════════ -->
-  <!--  MOBILE MENU OVERLAY                                    -->
-  <!-- ═══════════════════════════════════════════════════════ -->
-  <div class="mobile-menu" id="mobileMenu">
-    <ul>
-      <li><a href="#services" class="mm-link">SERVICES</a></li>
-      <li><a href="#insights" class="mm-link">INSIGHTS</a></li>
-      <li><a href="#pricing" class="mm-link">PRICING</a></li>
-      <li><a href="#contact" class="mm-link mm-cta">LET'S TALK →</a></li>
-    </ul>
+      <a class="btn-secondary" href="#audit">
+        GET A FREE AUDIT
+      </a>
+    </div>
   </div>
 
-  <main>
+  <!-- Kinetic Elements -->
+  <div class="hidden lg:block absolute top-20 right-0 w-1/3 h-full pointer-events-none">
+    <div class="absolute top-1/2 right-10 transform -translate-y-1/2 flex flex-col items-end gap-4">
+      <div class="flex items-end gap-1">
+        <div class="w-2 bg-primary-container h-8 animate-pulse"></div>
+        <div class="w-2 bg-primary-container h-16 animate-pulse" style="animation-delay: 0.2s"></div>
+        <div class="w-2 bg-primary-container h-24 animate-pulse" style="animation-delay: 0.4s"></div>
+        <div class="w-2 bg-primary-container h-32 animate-pulse" style="animation-delay: 0.6s"></div>
+      </div>
+      <div class="text-right">
+        <div style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 48px; line-height: 56px; color: #ffe000; line-height: 1;">SME SCALE</div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: #cec6ab; margin-top: 8px;">Momentum Engine Active</div>
+      </div>
+      <div class="w-full h-px bg-gradient-to-l from-primary-container to-transparent opacity-50"></div>
+    </div>
+  </div>
+</section>
 
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <!--  HERO                                                   -->
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <section class="hero" id="hero">
-      <div class="hero-halftone"></div>
-      <div class="hero-zigzag-top"></div>
+<!-- Stats Ticker -->
+<div class="bg-primary-container py-4 border-y-4 border-black overflow-hidden whitespace-nowrap">
+  <div class="flex gap-12 items-center animate-infinite-scroll">
+    <span class="text-on-primary-container font-headline-md uppercase italic flex items-center gap-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 32px; line-height: 40px;">
+      <span class="material-symbols-outlined">bolt</span> IMMERSIVE EXPERIENCES (XR)
+    </span>
+    <span class="text-on-primary-container font-headline-md uppercase italic flex items-center gap-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 32px; line-height: 40px;">
+      <span class="material-symbols-outlined">bolt</span> SALES PIPELINE
+    </span>
+    <span class="text-on-primary-container font-headline-md uppercase italic flex items-center gap-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 32px; line-height: 40px;">
+      <span class="material-symbols-outlined">bolt</span> CGI &amp; 3D VISUALIZATION
+    </span>
+    <span class="text-on-primary-container font-headline-md uppercase italic flex items-center gap-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 32px; line-height: 40px;">
+      <span class="material-symbols-outlined">bolt</span> GROWTH STRATEGY
+    </span>
+    <!-- Duplicate for seamless loop -->
+    <span class="text-on-primary-container font-headline-md uppercase italic flex items-center gap-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 32px; line-height: 40px;">
+      <span class="material-symbols-outlined">bolt</span> IMMERSIVE EXPERIENCES (XR)
+    </span>
+    <span class="text-on-primary-container font-headline-md uppercase italic flex items-center gap-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 32px; line-height: 40px;">
+      <span class="material-symbols-outlined">bolt</span> SALES PIPELINE
+    </span>
+    <span class="text-on-primary-container font-headline-md uppercase italic flex items-center gap-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 32px; line-height: 40px;">
+      <span class="material-symbols-outlined">bolt</span> CGI &amp; 3D VISUALIZATION
+    </span>
+    <span class="text-on-primary-container font-headline-md uppercase italic flex items-center gap-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 32px; line-height: 40px;">
+      <span class="material-symbols-outlined">bolt</span> GROWTH STRATEGY
+    </span>
+  </div>
+</div>
 
-      <div class="hero-inner container">
-        <div class="hero-badge">⚡ INDIA'S BOLDEST DIGITAL STUDIO ⚡</div>
-        <h1 class="hero-headline">
-          <span class="line-1">WE MAKE</span>
-          <span class="line-2 hero-accent">BRANDS</span>
-          <span class="line-3">IMPOSSIBLE<br>TO IGNORE.</span>
-        </h1>
-        <p class="hero-sub">CGI · XR · FILMS · GROWTH MARKETING<br>Built for Indian SMEs that mean business.</p>
-        <div class="hero-actions">
-          <a href="#services" class="btn btn-primary">SEE OUR WORK</a>
-          <a href="#contact" class="btn btn-outline">GET A FREE AUDIT →</a>
+<!-- Superpowers Section -->
+<section class="px-6 md:px-margin-desktop py-24 bg-background max-w-container-max mx-auto" id="services">
+  <div class="mb-16">
+    <span class="bg-primary-container text-on-primary-container px-3 py-1 font-mono text-xs font-bold uppercase inline-block" style="font-family: 'JetBrains Mono', monospace;">What we do</span>
+    <h2 class="uppercase mt-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 48px; line-height: 56px;">OUR <span class="italic" style="color: #ffe000;">SUPERPOWERS</span></h2>
+    <p class="text-on-surface-variant mt-2" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 18px; line-height: 28px;">Four weapons in our arsenal. Infinite ways to win for your brand.</p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+    <!-- 01 CGI -->
+    <div class="power-card group">
+      <span class="absolute top-4 right-8 font-headline-lg text-surface-container opacity-20" style="font-family: 'Oswald', sans-serif; font-size: 48px; line-height: 56px; font-weight: 600;">01</span>
+      <span class="material-symbols-outlined card-icon text-4xl mb-6 block transition-all" style="font-variation-settings: 'FILL' 1; font-size: 40px;">ads_click</span>
+      <h3 class="uppercase mb-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 32px; line-height: 40px;">CGI &amp; 3D VISUALIZATION</h3>
+      <p class="text-on-surface-variant mb-6" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 16px; line-height: 24px;">Hyper-real. Always on-brand. Photorealistic CGI for packaging and products that convert browsers into buyers.</p>
+      <ul class="space-y-2 uppercase" style="font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 20px; letter-spacing: 0.05em; font-weight: 500; color: #00dce2;">
+        <li class="flex items-center gap-2"><div class="w-2 h-2 bg-primary-container"></div> Product &amp; Packaging Renders</li>
+        <li class="flex items-center gap-2"><div class="w-2 h-2 bg-primary-container"></div> Industrial &amp; Machinery Viz</li>
+        <li class="flex items-center gap-2"><div class="w-2 h-2 bg-primary-container"></div> 360° Turntable Animations</li>
+      </ul>
+    </div>
+
+    <!-- 02 Immersive XR -->
+    <div class="power-card group">
+      <span class="absolute top-4 right-8 font-headline-lg text-surface-container opacity-20" style="font-family: 'Oswald', sans-serif; font-size: 48px; line-height: 56px; font-weight: 600;">02</span>
+      <span class="material-symbols-outlined card-icon text-4xl mb-6 block transition-all" style="font-size: 40px;">view_in_ar</span>
+      <h3 class="uppercase mb-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 32px; line-height: 40px;">IMMERSIVE EXPERIENCES (XR)</h3>
+      <p class="text-on-surface-variant mb-6" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 16px; line-height: 24px;">Reality, upgraded. Web-AR and spatial computing including high-end Car Configurators for brands like Tata and Honda.</p>
+      <ul class="space-y-2 uppercase" style="font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 20px; letter-spacing: 0.05em; font-weight: 500; color: #00dce2;">
+        <li class="flex items-center gap-2"><div class="w-2 h-2 bg-primary-container"></div> Car Configurators (Tata/Honda)</li>
+        <li class="flex items-center gap-2"><div class="w-2 h-2 bg-primary-container"></div> Spatial Commerce Experiences</li>
+        <li class="flex items-center gap-2"><div class="w-2 h-2 bg-primary-container"></div> Web-AR Virtual Showrooms</li>
+      </ul>
+    </div>
+
+    <!-- 03 Sales Pipeline -->
+    <div class="power-card group" style="border-color: rgba(255, 224, 0, 0.3);">
+      <span class="absolute top-4 right-8 font-headline-lg text-surface-container opacity-20" style="font-family: 'Oswald', sans-serif; font-size: 48px; line-height: 56px; font-weight: 600;">03</span>
+      <span class="material-symbols-outlined card-icon text-4xl mb-6 block transition-all" style="font-variation-settings: 'FILL' 1; font-size: 40px;">account_tree</span>
+      <h3 class="uppercase mb-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 32px; line-height: 40px;">SALES PIPELINE</h3>
+      <p class="text-on-surface-variant mb-6" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 16px; line-height: 24px;">Automated, high-conversion funnels and lead management systems built for performance. Zero friction from click to close.</p>
+      <ul class="space-y-2 uppercase" style="font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 20px; letter-spacing: 0.05em; font-weight: 500; color: #00dce2;">
+        <li class="flex items-center gap-2"><div class="w-2 h-2 bg-primary-container"></div> High-Conversion Funnels</li>
+        <li class="flex items-center gap-2"><div class="w-2 h-2 bg-primary-container"></div> Automated Lead Nurturing</li>
+        <li class="flex items-center gap-2"><div class="w-2 h-2 bg-primary-container"></div> CRM Integration &amp; Optimization</li>
+      </ul>
+    </div>
+
+    <!-- 04 Growth Strategy -->
+    <div class="power-card group">
+      <span class="absolute top-4 right-8 font-headline-lg text-surface-container opacity-20" style="font-family: 'Oswald', sans-serif; font-size: 48px; line-height: 56px; font-weight: 600;">04</span>
+      <span class="material-symbols-outlined card-icon text-4xl mb-6 block transition-all" style="font-size: 40px;">trending_up</span>
+      <h3 class="uppercase mb-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 32px; line-height: 40px;">GROWTH STRATEGY</h3>
+      <p class="text-on-surface-variant mb-6" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 16px; line-height: 24px;">ROAS that speaks for itself. Performance marketing and ad management built around your CAC targets.</p>
+      <ul class="space-y-2 uppercase" style="font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 20px; letter-spacing: 0.05em; font-weight: 500; color: #00dce2;">
+        <li class="flex items-center gap-2"><div class="w-2 h-2 bg-primary-container"></div> Meta &amp; Google Performance Ads</li>
+        <li class="flex items-center gap-2"><div class="w-2 h-2 bg-primary-container"></div> Funnel Audits &amp; CRO</li>
+        <li class="flex items-center gap-2"><div class="w-2 h-2 bg-primary-container"></div> Weekly ROI Dashboards</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Community Insights -->
+<section class="px-6 md:px-margin-desktop py-24 bg-surface-container-low" id="insights">
+  <div class="max-w-container-max mx-auto">
+    <div class="text-center mb-16">
+      <span class="bg-error-red text-white px-3 py-1 font-mono text-xs font-bold uppercase inline-block" style="font-family: 'JetBrains Mono', monospace;">Brand Building Intelligence</span>
+      <h2 class="uppercase mt-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 48px; line-height: 56px;">COMMUNITY <span class="italic">INSIGHTS</span> &amp; NEWS</h2>
+      <p class="text-on-surface-variant mt-2" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 16px; line-height: 24px;">The brand building signal, filtered for Indian marketers.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Featured Article -->
+      <div class="md:col-span-2 bg-background border-2 border-primary p-8 flex flex-col justify-between hover:border-primary-container transition-colors">
+        <div>
+          <div class="flex items-center gap-2 mb-6">
+            <span class="material-symbols-outlined" style="color: #ffe000;">bolt</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 20px; letter-spacing: 0.05em; font-weight: 500; text-transform: uppercase;">Expert Tactics</span>
+          </div>
+          <h3 class="uppercase mb-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 48px; line-height: 56px;">THE BRAND POSITIONING FRAMEWORK THAT ACTUALLY STICKS IN 2025</h3>
+          <p class="text-on-surface-variant" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 18px; line-height: 28px;">Most Indian D2C brands confuse aesthetics with positioning. Here's the 4-step framework that separates brands that scale from brands that stagnate.</p>
+        </div>
+        <div class="mt-8 flex justify-between items-end">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #cec6ab;">HubSpot Blog • 11 months ago • 8 min read</div>
+          <span class="material-symbols-outlined text-4xl" style="color: #ffe000; font-variation-settings: 'FILL' 1; font-size: 36px;">star</span>
         </div>
       </div>
 
-      <!-- Floating comic-style callout bubbles -->
-      <div class="bubble bubble-1 reveal-pop">3.8x<br><small>ROAS</small></div>
-      <div class="bubble bubble-2 reveal-pop">120+<br><small>PROJECTS</small></div>
-      <div class="speech-burst reveal-pop">WOW<br>FACTOR<br>✓</div>
-      <div class="hero-zigzag-bottom"></div>
-    </section>
+      <!-- Side card 1 -->
+      <div class="bg-surface-grey border border-surface-variant p-6 hover:border-electric-cyan transition-colors">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined" style="color: #00C8E0;">chat_bubble</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 20px; letter-spacing: 0.05em; font-weight: 500; text-transform: uppercase; color: #00C8E0;">Community</span>
+        </div>
+        <h4 class="uppercase mb-3" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px; color: #fffcff;">"WE 10X'D OUR REVENUE WITHOUT CHANGING THE PRODUCT"</h4>
+        <p class="text-on-surface-variant text-sm line-clamp-3 mb-4" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 14px; line-height: 22px;">Founder shares the exact rebranding playbook that shifted their positioning from 'functional' to 'aspirational' in 90 days.</p>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; color: #cec6ab;">r/Entrepreneur • 847 upvotes</div>
+      </div>
 
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <!--  TICKER TAPE                                            -->
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <div class="ticker-wrap" aria-hidden="true">
-      <div class="ticker-track" id="tickerTrack">
-        <!-- Populated by app.js -->
+      <!-- Side card 2 -->
+      <div class="bg-surface-grey border border-surface-variant p-6 hover:border-primary-container transition-colors">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="material-symbols-outlined" style="color: #ffe000;">newspaper</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 20px; letter-spacing: 0.05em; font-weight: 500; text-transform: uppercase; color: #ffe000;">Industry News</span>
+        </div>
+        <h4 class="uppercase mb-3" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px; color: #fffcff;">INDIA'S D2C BRANDS ARE WINNING WITH REGIONAL IDENTITY</h4>
+        <p class="text-on-surface-variant text-sm line-clamp-3 mb-4" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 14px; line-height: 22px;">New research shows Indian D2C brands that lean into regional cultural identity see 34% higher brand recall.</p>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; color: #cec6ab;">Inc42 • 12 months ago</div>
+      </div>
+
+      <!-- Side card 3 -->
+      <div class="bg-surface-grey border border-surface-variant p-6">
+        <h4 class="uppercase mb-3" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px; color: #fffcff;">HONEST BREAKDOWN OF WHAT ACTUALLY MOVED THE NEEDLE FOR OUR BRAND</h4>
+        <p class="text-on-surface-variant text-sm mb-4" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 14px; line-height: 22px;">Not another 'growth hacking' post. Founder of a 7-figure D2C skincare brand breaks down the 3 brand decisions...</p>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; color: #cec6ab;">r/marketing • 1.2k upvotes</div>
+      </div>
+
+      <!-- Side card 4 -->
+      <div class="bg-surface-grey border border-surface-variant p-6">
+        <h4 class="uppercase mb-3" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px; color: #fffcff;">WHY YOUR PRODUCT PHOTOGRAPHY IS KILLING YOUR BRAND (AND CGI IS THE FIX)</h4>
+        <p class="text-on-surface-variant text-sm mb-4" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 14px; line-height: 22px;">A breakdown of why Indian SMEs are switching to CGI renders for e-commerce listings — with A/B test data.</p>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; color: #cec6ab;">Expert Tactics • 6 min read</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="px-6 md:px-margin-desktop py-24 bg-background max-w-container-max mx-auto" id="pricing">
+  <div class="text-center mb-16">
+    <span class="bg-primary-container text-on-primary-container px-3 py-1 font-mono text-xs font-bold uppercase inline-block" style="font-family: 'JetBrains Mono', monospace;">SME Starter Packages</span>
+    <h2 class="uppercase mt-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 48px; line-height: 56px;">CLEAR <span style="color: #ffe000;">PRICING.</span></h2>
+    <p class="text-on-surface-variant mt-2" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 16px; line-height: 24px;">No hidden fees — straight-up pricing, no nonsense.</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+
+    <!-- Package 1 -->
+    <div class="border border-surface-variant p-8 flex flex-col hover:border-primary-container transition-all group">
+      <span class="bg-primary-container text-on-primary-container px-2 py-0.5 text-[10px] font-bold uppercase self-start mb-6" style="font-family: 'JetBrains Mono', monospace;">Most Popular</span>
+      <h3 class="uppercase mb-2" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px;">CGI STARTER</h3>
+      <div class="mb-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 48px; line-height: 56px; color: #ffe000;">₹25,000</div>
+      <p class="text-on-surface-variant text-xs uppercase mb-8 pb-4 border-b border-surface-variant" style="font-family: 'JetBrains Mono', monospace;">Per Project</p>
+      <ul class="space-y-4 mb-12 flex-grow" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 18px;">
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> 3 Hero Product Renders</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> 2 Revision Rounds</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> 4K Resolution Output</li>
+      </ul>
+      <button class="w-full py-3 border-2 font-bold uppercase group-hover:bg-primary-container group-hover:text-black transition-all" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #ffe000; color: #ffe000; background: transparent; cursor: pointer;">Get a Quote</button>
+    </div>
+
+    <!-- Package 2 -->
+    <div class="border border-surface-variant p-8 flex flex-col hover:border-electric-cyan transition-all group">
+      <span class="bg-electric-cyan text-white px-2 py-0.5 text-[10px] font-bold uppercase self-start mb-6" style="font-family: 'JetBrains Mono', monospace;">Cutting Edge</span>
+      <h3 class="uppercase mb-2" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px;">XR STARTER</h3>
+      <div class="mb-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 48px; line-height: 56px; color: #00C8E0;">₹40,000</div>
+      <p class="text-on-surface-variant text-xs uppercase mb-8 pb-4 border-b border-surface-variant" style="font-family: 'JetBrains Mono', monospace;">Per Experience</p>
+      <ul class="space-y-4 mb-12 flex-grow" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 18px;">
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #00C8E0; font-size: 18px;">check</span> 1 Web-AR Experience</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #00C8E0; font-size: 18px;">check</span> Mobile &amp; Desktop Ready</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #00C8E0; font-size: 18px;">check</span> 3 Months Hosting</li>
+      </ul>
+      <button class="w-full py-3 border-2 font-bold uppercase group-hover:bg-electric-cyan group-hover:text-black transition-all" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #00C8E0; color: #00C8E0; background: transparent; cursor: pointer;">Get a Quote</button>
+    </div>
+
+    <!-- Package 3 - Featured -->
+    <div class="border-2 p-8 flex flex-col hover:border-primary-container transition-all group scale-100 md:scale-105 bg-surface-container-low" style="border-color: rgba(255, 224, 0, 0.5);">
+      <span class="bg-primary-container text-on-primary-container px-2 py-0.5 text-[10px] font-bold uppercase self-start mb-6" style="font-family: 'JetBrains Mono', monospace;">Best ROI</span>
+      <h3 class="uppercase mb-2" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px;">PIPELINE PRO</h3>
+      <div class="mb-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 48px; line-height: 56px; color: #ffe000;">₹60,000</div>
+      <p class="text-on-surface-variant text-xs uppercase mb-8 pb-4 border-b border-surface-variant" style="font-family: 'JetBrains Mono', monospace;">Setup Fee</p>
+      <ul class="space-y-4 mb-12 flex-grow" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 18px;">
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> Automated Lead Capture</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> 5-Step Email Sequence</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> CRM Dashboard Setup</li>
+      </ul>
+      <button class="w-full py-3 bg-primary-container text-black font-bold uppercase hover:bg-white transition-all" style="font-family: 'Oswald', sans-serif; font-size: 18px; border: none; cursor: pointer;">Launch Funnel</button>
+    </div>
+
+    <!-- Package 4 -->
+    <div class="border border-surface-variant p-8 flex flex-col hover:border-primary transition-all group">
+      <span class="bg-surface-variant text-on-surface px-2 py-0.5 text-[10px] font-bold uppercase self-start mb-6" style="font-family: 'JetBrains Mono', monospace;">Scale Mode</span>
+      <h3 class="uppercase mb-2" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px;">GROWTH STARTER</h3>
+      <div class="mb-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 48px; line-height: 56px; color: #e2e2e2;">₹25,000</div>
+      <p class="text-on-surface-variant text-xs uppercase mb-8 pb-4 border-b border-surface-variant" style="font-family: 'JetBrains Mono', monospace;">/ Month</p>
+      <ul class="space-y-4 mb-12 flex-grow" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 18px;">
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #e2e2e2; font-size: 18px;">check</span> Ad Creative Management</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #e2e2e2; font-size: 18px;">check</span> Weekly Performance Reports</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #e2e2e2; font-size: 18px;">check</span> Dedicated Strategist</li>
+      </ul>
+      <button class="w-full py-3 border-2 font-bold uppercase group-hover:bg-on-surface group-hover:text-black transition-all" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #e2e2e2; color: #e2e2e2; background: transparent; cursor: pointer;">Get a Quote</button>
+    </div>
+  </div>
+
+  <p class="text-center text-on-surface-variant text-xs mt-12 italic opacity-60" style="font-family: 'JetBrains Mono', monospace;">* All packages are starting points. Custom scopes quoted within 24 hours.</p>
+</section>
+
+<!-- Contact Section -->
+<section class="bg-primary-container py-24 px-6 md:px-margin-desktop" id="contact">
+  <div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+    <div style="color: #716300;">
+      <span class="bg-black text-white px-3 py-1 font-mono text-xs font-bold uppercase inline-block" style="font-family: 'JetBrains Mono', monospace;">Start Here</span>
+      <h2 class="uppercase mt-6 mb-8 leading-none" style="font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 80px; line-height: 90px; letter-spacing: -0.02em;">READY TO <br/> STAND OUT?</h2>
+      <p class="max-w-md mb-12" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 18px; line-height: 28px; opacity: 0.9;">Drop us a brief and we'll come back with a strategy doc and quote — no strings attached. Our typical response time is under 4 hours.</p>
+      <div class="space-y-6">
+        <div class="flex items-center gap-4">
+          <span class="material-symbols-outlined bg-black p-3" style="color: #ffe000; border-radius: 50%;">mail</span>
+          <a href="mailto:hello@obsedian.in" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 20px; color: #716300; text-decoration: none;">hello@obsedian.in</a>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="material-symbols-outlined bg-black p-3" style="color: #ffe000; border-radius: 50%;">call</span>
+          <a href="tel:+919324742958" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 20px; color: #716300; text-decoration: none;">+91 93247 42958</a>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="material-symbols-outlined bg-black p-3" style="color: #ffe000; border-radius: 50%;">location_on</span>
+          <span style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 20px; color: #716300;">Mumbai, India</span>
+        </div>
       </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <!--  STATS BAR                                              -->
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <section class="stats-bar">
-      <div class="container stats-grid" id="statsGrid">
-        <!-- Populated by app.js -->
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <!--  SERVICES                                               -->
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <section class="section services" id="services">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-label">WHAT WE DO</div>
-          <h2 class="section-title">OUR <span class="text-accent-red">SUPER</span>POWERS</h2>
-          <p class="section-sub">Four weapons in our arsenal. Infinite ways to win for your brand.</p>
-        </div>
-        <div class="services-grid" id="servicesGrid">
-          <!-- Populated by app.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <!--  INSIGHTS HUB                                           -->
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <section class="section insights" id="insights">
-      <div class="container">
-
-        <!-- Header -->
-        <div class="section-header">
-          <div class="section-label">BRAND BUILDING INTELLIGENCE</div>
-          <h2 class="section-title">COMMUNITY <span class="text-accent-red">INSIGHTS</span> & NEWS</h2>
-          <p class="section-sub">Live discussions from Reddit · Industry articles · Expert tactics.<br>The brand building signal, filtered for Indian marketers.</p>
-        </div>
-
-        <!-- Meta bar: live badge + timestamp -->
-        <div class="insights-meta-bar">
-          <span class="insights-live-badge" id="insightsLiveBadge">● LIVE</span>
-          <span class="insights-timestamp" id="insightsTimestamp"></span>
-        </div>
-
-        <!-- Filter Bar -->
-        <div class="insights-filter-bar" id="insightsFilterBar">
-          <button class="insights-filter-btn active" data-tag="all" style="--filter-color: var(--yellow);">
-            ALL TOPICS
-          </button>
-          <button class="insights-filter-btn" data-tag="community" style="--filter-color: var(--yellow);">
-            💬 Community Discussions
-          </button>
-          <button class="insights-filter-btn" data-tag="tactics" style="--filter-color: var(--red);">
-            ⚡ Expert Tactics
-          </button>
-          <button class="insights-filter-btn" data-tag="news" style="--filter-color: var(--cyan);">
-            📡 Industry News
-          </button>
-        </div>
-
-        <!-- Featured Hero Card — populated by insights.js -->
-        <div class="insights-featured-wrap" id="insightsFeatured"></div>
-
-        <!-- Grid — populated by insights.js -->
-        <div class="insights-grid" id="insightsGrid">
-          <!-- Skeleton loaders shown while fetching -->
-        </div>
-
-        <!-- Load More -->
-        <div class="insights-load-more-wrap">
-          <button class="btn btn-outline" id="insightsLoadMore"
-                  style="border-color: var(--black); color: var(--black); box-shadow: 5px 5px 0 var(--black);">
-            LOAD MORE ↓
-          </button>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <!--  PRICING                                                -->
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <section class="section pricing" id="pricing">
-      <div class="pricing-halftone"></div>
-      <div class="container">
-        <div class="section-header">
-          <div class="section-label">SME STARTER PACKAGES</div>
-          <h2 class="section-title">CLEAR <span class="text-accent-yellow">PRICING</span>.</h2>
-          <p class="section-sub">No hidden fees — straight-up pricing, no nonsense.<br>No vague "let's get on a call" runaround. Start here. Scale fast.</p>
-        </div>
-        <div class="pricing-grid" id="pricingGrid">
-          <!-- Populated by app.js -->
-        </div>
-        <p class="pricing-note">* All packages are starting points. Custom scopes quoted within 24 hours.</p>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <!--  CONTACT                                                -->
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <section class="section contact" id="contact">
-      <div class="container contact-layout">
-
-        <!-- Left copy panel -->
-        <div class="contact-copy">
-          <div class="section-label">START HERE</div>
-          <h2 class="contact-title">READY TO<br><span class="text-accent-yellow">STAND OUT?</span></h2>
-          <p class="contact-desc">Drop us a brief and we'll come back with a strategy doc and quote — no strings attached. Our typical response time is under 4 hours.</p>
-          <div class="contact-info" id="contactInfo">
-            <!-- Populated by app.js -->
+    <div class="bg-black p-8 md:p-12 border-4 border-black relative min-h-[600px]">
+      <div id="form-content">
+        <h3 class="uppercase mb-8" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 30px; line-height: 38px; color: #ffe000;">SEND THE SIGNAL</h3>
+        <form action="https://formspree.io/f/xrevkgep" class="space-y-8" id="lead-form" method="POST" novalidate>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <label class="input-label" for="form-name">Your Name *</label>
+              <input class="input-brutal" id="form-name" name="name" placeholder="Tony Stark" required type="text"/>
+              <p class="text-[10px] mt-1 hidden" id="error-name" style="color: #FF3B3B; font-family: 'JetBrains Mono', monospace;">Full name is required.</p>
+            </div>
+            <div>
+              <label class="input-label" for="form-company">Company *</label>
+              <input class="input-brutal" id="form-company" name="company" placeholder="Stark Industries" required type="text"/>
+              <p class="text-[10px] mt-1 hidden" id="error-company" style="color: #FF3B3B; font-family: 'JetBrains Mono', monospace;">Company name is required.</p>
+            </div>
           </div>
-          <div class="contact-social" id="contactSocial">
-            <!-- Populated by app.js -->
+          <div>
+            <label class="input-label" for="form-email">Email Address *</label>
+            <input class="input-brutal" id="form-email" name="email" placeholder="tony@stark.com" required type="email"/>
+            <p class="text-[10px] mt-1 hidden" id="error-email" style="color: #FF3B3B; font-family: 'JetBrains Mono', monospace;">Please enter a valid email address.</p>
+          </div>
+          <div>
+            <label class="input-label" for="form-service">Service you're interested in *</label>
+            <select class="input-brutal" id="form-service" name="service" required>
+              <option value="">— SELECT A SERVICE —</option>
+              <option value="cgi">CGI &amp; 3D Visualization</option>
+              <option value="xr">Immersive Experiences (XR)</option>
+              <option value="pipeline">Sales Pipeline</option>
+              <option value="growth">Growth Strategy</option>
+            </select>
+            <p class="text-[10px] mt-1 hidden" id="error-service" style="color: #FF3B3B; font-family: 'JetBrains Mono', monospace;">Please select a service.</p>
+          </div>
+          <div>
+            <label class="input-label" for="form-budget">Approximate Budget</label>
+            <select class="input-brutal" id="form-budget" name="budget">
+              <option value="">— SELECT A RANGE —</option>
+              <option value="under25k">Under ₹25,000</option>
+              <option value="25k-75k">₹25,000 – ₹75,000</option>
+              <option value="75k-200k">₹75,000 – ₹2,00,000</option>
+              <option value="above200k">Above ₹2,00,000</option>
+            </select>
+          </div>
+          <div>
+            <label class="input-label" for="form-description">Tell us about your project *</label>
+            <textarea class="input-brutal h-32 resize-none" id="form-description" name="message" placeholder="I need a high-conversion sales funnel for our new product launch..." required style="font-family: 'Hanken Grotesk', sans-serif; color: #fffcff;"></textarea>
+            <p class="text-[10px] mt-1 hidden" id="error-description" style="color: #FF3B3B; font-family: 'JetBrains Mono', monospace;">Project details are required (min 20 chars).</p>
+          </div>
+          <button class="w-full font-bold uppercase py-4 text-xl hover:bg-white transition-all transform active:scale-95 flex items-center justify-center gap-3" id="submit-btn" type="submit" style="font-family: 'Oswald', sans-serif; background-color: #ffe000; color: #000; border: none; cursor: pointer;">
+            LAUNCH THE BRIEF 🚀
+          </button>
+        </form>
+      </div>
+
+      <!-- Loading State -->
+      <div class="absolute inset-0 bg-black flex-col items-center justify-center p-12 text-center form-state-hidden" id="form-loading" style="display: none;">
+        <div class="w-16 h-16 border-4 border-primary-container border-t-transparent rounded-full animate-spin-custom mb-6" style="border-color: #ffe000 transparent transparent transparent;"></div>
+        <p class="uppercase" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px; color: #ffe000;">Processing Your Signal...</p>
+        <p class="text-xs mt-4" style="font-family: 'JetBrains Mono', monospace; color: #cec6ab;">Transmitting data to Obsedian HQ and preparing your receipt.</p>
+      </div>
+
+      <!-- Success State -->
+      <div class="absolute inset-0 bg-black flex-col items-center justify-center p-12 text-center form-state-hidden" id="form-success" style="display: none;">
+        <span class="material-symbols-outlined mb-6" style="color: #ffe000; font-size: 72px;">check_circle</span>
+        <h3 class="uppercase mb-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 36px; line-height: 44px; color: #ffe000;">BRIEF RECEIVED</h3>
+        <p class="mb-8" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 18px; line-height: 28px; color: #e2e2e2;">We've received your brief and sent a confirmation receipt to your inbox. An analyst will review your requirements and reach out within 4 hours.</p>
+        <div class="flex flex-col gap-4 w-full">
+          <div class="flex items-center gap-3 p-4" style="background-color: #1f1f1f; border: 1px solid rgba(255, 224, 0, 0.2);">
+            <span class="material-symbols-outlined" style="color: #ffe000;">notifications_active</span>
+            <span class="text-[10px] text-left uppercase" style="font-family: 'JetBrains Mono', monospace;">Admin Alert Triggered • Mumbai Hub</span>
+          </div>
+          <div class="flex items-center gap-3 p-4" style="background-color: #1f1f1f; border: 1px solid rgba(255, 224, 0, 0.2);">
+            <span class="material-symbols-outlined" style="color: #ffe000;">mark_email_read</span>
+            <span class="text-[10px] text-left uppercase" style="font-family: 'JetBrains Mono', monospace;">User Confirmation Sent • Pipeline Active</span>
           </div>
         </div>
+        <button class="mt-12 uppercase text-xs underline hover:text-white" onclick="resetForm()" style="font-family: 'JetBrains Mono', monospace; color: #ffe000; background: none; border: none; cursor: pointer;">Send another signal</button>
+      </div>
 
-        <!-- Right form panel -->
-        <div class="contact-form-wrap">
-          <div class="form-panel">
-            <div class="form-panel-header">SEND THE SIGNAL</div>
-            <form class="contact-form" id="contactForm" method="POST">
-              <!-- action injected by app.js -->
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="fname">YOUR NAME *</label>
-                  <input type="text" id="fname" name="name" placeholder="Tony Stark" required />
-                </div>
-                <div class="form-group">
-                  <label for="fcompany">COMPANY *</label>
-                  <input type="text" id="fcompany" name="company" placeholder="Stark Industries" required />
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="femail">EMAIL ADDRESS *</label>
-                <input type="email" id="femail" name="email" placeholder="tony@stark.com" required />
-              </div>
-              <div class="form-group">
-                <label for="fphone">PHONE NUMBER</label>
-                <input type="tel" id="fphone" name="phone" placeholder="+91 98765 43210" />
-              </div>
-              <div class="form-group">
-                <label for="fservice">SERVICE YOU'RE INTERESTED IN *</label>
-                <select id="fservice" name="service" required>
-                  <option value="" disabled selected>— SELECT A SERVICE —</option>
-                  <!-- Options injected by app.js -->
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="fbudget">APPROXIMATE BUDGET</label>
-                <select id="fbudget" name="budget">
-                  <option value="" disabled selected>— SELECT A RANGE —</option>
-                  <option value="under-25k">Under ₹25,000</option>
-                  <option value="25k-75k">₹25,000 – ₹75,000</option>
-                  <option value="75k-2l">₹75,000 – ₹2,00,000</option>
-                  <option value="above-2l">Above ₹2,00,000</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="fmessage">TELL US ABOUT YOUR PROJECT *</label>
-                <textarea id="fmessage" name="message" rows="4" placeholder="I need CGI renders for our new product launch..." required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary btn-full" id="formSubmitBtn">
-                LAUNCH THE BRIEF 🚀
-              </button>
-              <div class="form-status" id="formStatus"></div>
-            </form>
-          </div>
+      <!-- Error State -->
+      <div class="absolute inset-0 bg-black flex-col items-center justify-center p-12 text-center form-state-hidden" id="form-error" style="display: none;">
+        <span class="material-symbols-outlined mb-6" style="color: #FF3B3B; font-size: 72px;">report</span>
+        <h3 class="uppercase mb-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 36px; line-height: 44px; color: #FF3B3B;">SIGNAL FAILED</h3>
+        <p class="mb-8" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 18px; line-height: 28px; color: #e2e2e2;">Something went wrong while processing your brief. Our systems might be experiencing heavy load.</p>
+        <div class="p-6 text-left mb-8" style="background-color: rgba(147, 0, 10, 0.2); border: 1px solid #FF3B3B;">
+          <p class="text-xs uppercase mb-2" style="font-family: 'JetBrains Mono', monospace; color: #FF3B3B;">Fallback Instruction:</p>
+          <p style="font-family: 'Hanken Grotesk', sans-serif; color: #e2e2e2;">Please email your brief directly to:</p>
+          <a href="mailto:hello@obsedian.in" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 20px; color: #ffe000; text-decoration: none; margin-top: 4px; display: inline-block;">hello@obsedian.in</a>
         </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ═══════════════════════════════════════════════════════ -->
-  <!--  FOOTER                                                 -->
-  <!-- ═══════════════════════════════════════════════════════ -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-logo">
-        <span class="logo-box">OBS</span><span class="logo-dot">●</span><span class="logo-text">EDIAN</span>
-        <p>YOUR DIGITAL STUDIO</p>
-      </div>
-      <div class="footer-links">
-        <a href="#services">Services</a>
-        <a href="#insights">Insights</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="footer-copy">
-        © <span id="footerYear"></span> Obsedian Studio. All rights reserved.<br>
-        Made with ☕ + 🎨 in Mumbai.
+        <button class="w-full font-bold uppercase py-4 hover:bg-primary-container transition-all" onclick="resetForm()" style="font-family: 'Oswald', sans-serif; font-size: 20px; background-color: #fffcff; color: #000; border: none; cursor: pointer;">Retry Form</button>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <!-- Scripts — data first, then app logic -->
-  <script src="data.js"></script>
-  <script src="insights-data.js"></script>
-  <script src="app.js"></script>
-  <script src="insights.js"></script>
+</main>
+
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t-2 border-surface-variant py-16">
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-8 px-6 md:px-margin-desktop max-w-container-max mx-auto">
+    <div class="md:col-span-4">
+      <div class="uppercase mb-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 32px; line-height: 40px; color: #fffcff;">OBSEDIAN</div>
+      <p class="mb-8" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 16px; line-height: 24px; color: #cec6ab;">YOUR DIGITAL STUDIO</p>
+      <p style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #cec6ab;">For more information contact: <br/><span style="color: #fffcff; font-weight: bold;">+91 93247 42958</span></p>
+    </div>
+    <div class="md:col-span-4">
+      <div class="uppercase mb-6" style="font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 20px; letter-spacing: 0.05em; color: #fffcff;">Navigation</div>
+      <div class="flex flex-col gap-4">
+        <a style="color: #cec6ab; text-decoration: none;" class="hover:text-primary transition-all" href="#services">Services</a>
+        <a style="color: #cec6ab; text-decoration: none;" class="hover:text-primary transition-all" href="#insights">Insights</a>
+        <a style="color: #cec6ab; text-decoration: none;" class="hover:text-primary transition-all" href="#pricing">Pricing</a>
+        <a style="color: #cec6ab; text-decoration: none;" class="hover:text-primary transition-all" href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="md:col-span-4">
+      <div class="uppercase mb-6" style="font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 20px; letter-spacing: 0.05em; color: #fffcff;">Socials</div>
+      <div class="flex gap-6">
+        <a class="uppercase" style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #cec6ab; text-decoration: underline;" href="#">Instagram</a>
+        <a class="uppercase" style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #cec6ab; text-decoration: underline;" href="#">LinkedIn</a>
+        <a class="uppercase" style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #cec6ab; text-decoration: underline;" href="#">Twitter</a>
+      </div>
+      <div class="mt-12">
+        <p style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #cec6ab;">© 2024 OBSEDIAN. All rights reserved. <br/>Made with ☕ + 🎨 in Mumbai.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const mobileBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (mobileBtn && mobileMenu) {
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+  }
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href === '#' || href === '') return;
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Ticker pause on hover
+  const ticker = document.querySelector('.animate-infinite-scroll');
+  if (ticker) {
+    ticker.addEventListener('mouseover', () => ticker.style.animationPlayState = 'paused');
+    ticker.addEventListener('mouseleave', () => ticker.style.animationPlayState = 'running');
+  }
+
+  // Lead Form Logic
+  const leadForm = document.getElementById('lead-form');
+  const formContent = document.getElementById('form-content');
+  const formLoading = document.getElementById('form-loading');
+  const formSuccess = document.getElementById('form-success');
+  const formError = document.getElementById('form-error');
+
+  const validateEmail = (email) => {
+    return String(email)
+      .toLowerCase()
+      .match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+  };
+
+  const showState = (state) => {
+    [formContent, formLoading, formSuccess, formError].forEach(el => {
+      el.classList.add('form-state-hidden');
+      el.style.display = 'none';
+    });
+    if (state === 'form') {
+      formContent.classList.remove('form-state-hidden');
+      formContent.style.display = 'block';
+    }
+    if (state === 'loading') {
+      formLoading.classList.remove('form-state-hidden');
+      formLoading.style.display = 'flex';
+    }
+    if (state === 'success') {
+      formSuccess.classList.remove('form-state-hidden');
+      formSuccess.style.display = 'flex';
+    }
+    if (state === 'error') {
+      formError.classList.remove('form-state-hidden');
+      formError.style.display = 'flex';
+    }
+  };
+
+  const resetForm = () => {
+    leadForm.reset();
+    document.querySelectorAll('[id^="error-"]').forEach(el => el.classList.add('hidden'));
+    showState('form');
+  };
+
+  if (leadForm) {
+    leadForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name = leadForm.name.value.trim();
+      const company = leadForm.company.value.trim();
+      const email = leadForm.email.value.trim();
+      const service = leadForm.service.value;
+      const message = leadForm.message.value.trim();
+
+      let isValid = true;
+
+      const toggleError = (id, show) => {
+        const el = document.getElementById(id);
+        if (show) el.classList.remove('hidden');
+        else el.classList.add('hidden');
+      };
+
+      if (name.length < 2) { toggleError('error-name', true); isValid = false; } else toggleError('error-name', false);
+      if (company.length < 1) { toggleError('error-company', true); isValid = false; } else toggleError('error-company', false);
+      if (!validateEmail(email)) { toggleError('error-email', true); isValid = false; } else toggleError('error-email', false);
+      if (!service) { toggleError('error-service', true); isValid = false; } else toggleError('error-service', false);
+      if (message.length < 20) { toggleError('error-description', true); isValid = false; } else toggleError('error-description', false);
+
+      if (!isValid) return;
+
+      showState('loading');
+
+      const formData = new FormData(leadForm);
+
+      try {
+        const response = await fetch(leadForm.action, {
+          method: leadForm.method,
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        await new Promise(resolve => setTimeout(resolve, 1200));
+
+        if (response.ok) {
+          showState('success');
+        } else {
+          throw new Error('Formspree failure');
+        }
+      } catch (err) {
+        console.error('Submission failed:', err);
+        showState('error');
+      }
+    });
+  }
+
+  window.resetForm = resetForm;
+</script>
 
 </body>
 </html>
