@@ -136,9 +136,6 @@
     background-color: #fffcff;
     color: #131313;
   }
-  .btn-primary:active {
-    transform: scale(0.95);
-  }
   
   .btn-secondary {
     border: 2px solid #fffcff;
@@ -162,9 +159,6 @@
     background-color: #fffcff;
     color: #131313;
   }
-  .btn-secondary:active {
-    transform: scale(0.95);
-  }
   
   .power-card {
     background-color: #1A1A1A;
@@ -185,36 +179,30 @@
     transition: all 300ms ease;
   }
   
-  /* Input fields - BLACK text on yellow background */
+  /* Form Card - GRAY with WHITE input background */
+  .form-card {
+    background-color: #1A1A1A;
+    border: 4px solid #000000;
+  }
+  
+  /* Input Brutal Style - WHITE background, BLACK text on type */
   .input-brutal {
-    background-color: #000000;
-    border: none;
-    border-bottom: 2px solid #000000;
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
     color: #000000;
     font-family: 'Hanken Grotesk', sans-serif;
     font-size: 16px;
     line-height: 24px;
     width: 100%;
-    padding: 8px 0;
+    padding: 12px 16px;
     outline: none;
-    transition: border-color 200ms ease, color 200ms ease;
+    transition: all 200ms ease;
     border-radius: 0;
   }
-  /* Yellow background override on form - ensures black text always */
-  .bg-primary-container .input-brutal,
-  .bg-primary-container input.input-brutal,
-  .bg-primary-container select.input-brutal,
-  .bg-primary-container textarea.input-brutal {
-    background-color: #000000 !important;
-    color: #ffffff !important;
-  }
-  .bg-primary-container input.input-brutal::placeholder,
-  .bg-primary-container textarea.input-brutal::placeholder {
-    color: #999999 !important;
-  }
-  
   .input-brutal:focus {
-    border-bottom-color: #ffe000;
+    border-color: #ffe000;
+    background-color: #ffffff;
+    color: #000000;
   }
   .input-brutal::placeholder {
     color: #888888;
@@ -226,21 +214,21 @@
     line-height: 20px;
     letter-spacing: 0.05em;
     font-weight: 500;
-    color: #000000;
+    color: #ffe000;
     text-transform: uppercase;
     margin-bottom: 8px;
     display: block;
   }
   
   select.input-brutal {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000000'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: right 0 center;
+    background-position: right 12px center;
     background-size: 20px;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    padding-right: 24px;
+    padding-right: 40px;
   }
   
   .form-state-hidden {
@@ -271,29 +259,28 @@
   
   /* Pricing button click animation */
   .pricing-btn {
-    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-    user-select: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 300ms ease;
   }
-  .pricing-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 224, 0, 0.3);
+  .pricing-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: translate(-50%, -50%);
+    transition: width 600ms ease, height 600ms ease;
+  }
+  .pricing-btn:active::before {
+    width: 400px;
+    height: 400px;
   }
   .pricing-btn:active {
-    transform: scale(0.92) translateY(0);
-    box-shadow: 0 2px 4px rgba(255, 224, 0, 0.2);
-  }
-  .pricing-btn-cyan:hover {
-    box-shadow: 0 4px 12px rgba(0, 200, 224, 0.3);
-  }
-  .pricing-btn-cyan:active {
-    box-shadow: 0 2px 4px rgba(0, 200, 224, 0.2);
-  }
-  .pricing-btn-white:hover {
-    box-shadow: 0 4px 12px rgba(226, 226, 226, 0.3);
-  }
-  .pricing-btn-white:active {
-    box-shadow: 0 2px 4px rgba(226, 226, 226, 0.2);
+    transform: scale(0.95);
   }
   
   @media (max-width: 768px) {
@@ -566,7 +553,7 @@
 
   <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
 
-    <!-- Package 1 - CGI Starter -->
+    <!-- Package 1 -->
     <div class="border border-surface-variant p-8 flex flex-col hover:border-primary-container transition-all group">
       <span class="bg-primary-container text-on-primary-container px-2 py-0.5 text-[10px] font-bold uppercase self-start mb-6" style="font-family: 'JetBrains Mono', monospace;">Most Popular</span>
       <h3 class="uppercase mb-2" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px;">CGI STARTER</h3>
@@ -577,10 +564,10 @@
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> 2 Revision Rounds</li>
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> 4K Resolution Output</li>
       </ul>
-      <a href="#contact" class="pricing-btn block text-center w-full py-3 border-2 font-bold uppercase no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #ffe000; color: #ffe000; background: transparent;">Get a Quote</a>
+      <a href="#contact" class="pricing-btn block text-center w-full py-3 border-2 font-bold uppercase group-hover:bg-primary-container group-hover:text-black transition-all no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #ffe000; color: #ffe000; background: transparent;">Get a Quote</a>
     </div>
 
-    <!-- Package 2 - XR Starter -->
+    <!-- Package 2 -->
     <div class="border border-surface-variant p-8 flex flex-col hover:border-electric-cyan transition-all group">
       <span class="bg-electric-cyan text-white px-2 py-0.5 text-[10px] font-bold uppercase self-start mb-6" style="font-family: 'JetBrains Mono', monospace;">Cutting Edge</span>
       <h3 class="uppercase mb-2" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px;">XR STARTER</h3>
@@ -591,10 +578,10 @@
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #00C8E0; font-size: 18px;">check</span> Mobile &amp; Desktop Ready</li>
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #00C8E0; font-size: 18px;">check</span> 3 Months Hosting</li>
       </ul>
-      <a href="#contact" class="pricing-btn pricing-btn-cyan block text-center w-full py-3 border-2 font-bold uppercase no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #00C8E0; color: #00C8E0; background: transparent;">Get a Quote</a>
+      <a href="#contact" class="pricing-btn block text-center w-full py-3 border-2 font-bold uppercase group-hover:bg-electric-cyan group-hover:text-black transition-all no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #00C8E0; color: #00C8E0; background: transparent;">Get a Quote</a>
     </div>
 
-    <!-- Package 3 - Pipeline Pro (Featured) -->
+    <!-- Package 3 - Featured -->
     <div class="border-2 p-8 flex flex-col hover:border-primary-container transition-all group scale-100 md:scale-105 bg-surface-container-low" style="border-color: rgba(255, 224, 0, 0.5);">
       <span class="bg-primary-container text-on-primary-container px-2 py-0.5 text-[10px] font-bold uppercase self-start mb-6" style="font-family: 'JetBrains Mono', monospace;">Best ROI</span>
       <h3 class="uppercase mb-2" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px;">PIPELINE PRO</h3>
@@ -605,10 +592,10 @@
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> 5-Step Email Sequence</li>
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> CRM Dashboard Setup</li>
       </ul>
-      <a href="#contact" class="pricing-btn block text-center w-full py-3 bg-primary-container text-black font-bold uppercase no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border: none;">Launch Funnel</a>
+      <a href="#contact" class="pricing-btn block text-center w-full py-3 bg-primary-container text-black font-bold uppercase hover:bg-white transition-all no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border: none;">Launch Funnel</a>
     </div>
 
-    <!-- Package 4 - Growth Starter -->
+    <!-- Package 4 -->
     <div class="border border-surface-variant p-8 flex flex-col hover:border-primary transition-all group">
       <span class="bg-surface-variant text-on-surface px-2 py-0.5 text-[10px] font-bold uppercase self-start mb-6" style="font-family: 'JetBrains Mono', monospace;">Scale Mode</span>
       <h3 class="uppercase mb-2" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px;">GROWTH STARTER</h3>
@@ -619,14 +606,14 @@
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #e2e2e2; font-size: 18px;">check</span> Weekly Performance Reports</li>
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #e2e2e2; font-size: 18px;">check</span> Dedicated Strategist</li>
       </ul>
-      <a href="#contact" class="pricing-btn pricing-btn-white block text-center w-full py-3 border-2 font-bold uppercase no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #e2e2e2; color: #e2e2e2; background: transparent;">Get a Quote</a>
+      <a href="#contact" class="pricing-btn block text-center w-full py-3 border-2 font-bold uppercase group-hover:bg-on-surface group-hover:text-black transition-all no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #e2e2e2; color: #e2e2e2; background: transparent;">Get a Quote</a>
     </div>
   </div>
 
   <p class="text-center text-on-surface-variant text-xs mt-12 italic opacity-60" style="font-family: 'JetBrains Mono', monospace;">* All packages are starting points. Custom scopes quoted within 24 hours.</p>
 </section>
 
-<!-- Contact Section -->
+<!-- Contact Section - YELLOW background, GRAY form card with WHITE inputs -->
 <section class="bg-primary-container py-24 px-6 md:px-margin-desktop" id="contact">
   <div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
     <div style="color: #716300;">
@@ -649,25 +636,26 @@
       </div>
     </div>
 
-    <div class="bg-black p-8 md:p-12 border-4 border-black relative min-h-[600px]">
+    <!-- GRAY form card with WHITE input fields -->
+    <div class="form-card p-8 md:p-12 relative min-h-[600px]">
       <div id="form-content">
         <h3 class="uppercase mb-8" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 30px; line-height: 38px; color: #ffe000;">SEND THE SIGNAL</h3>
-        <form action="https://formspree.io/f/xrevkgep" class="space-y-8" id="lead-form" method="POST" novalidate>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <form action="https://formspree.io/f/xrevkgep" class="space-y-6" id="lead-form" method="POST" novalidate>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label class="input-label" for="form-name">Your Name *</label>
-              <input class="input-brutal" id="form-name" name="name" placeholder="Tony Stark" required type="text" autocomplete="name"/>
+              <input class="input-brutal" id="form-name" name="name" placeholder="Tony Stark" required type="text"/>
               <p class="text-[10px] mt-1 hidden" id="error-name" style="color: #FF3B3B; font-family: 'JetBrains Mono', monospace;">Full name is required.</p>
             </div>
             <div>
               <label class="input-label" for="form-company">Company *</label>
-              <input class="input-brutal" id="form-company" name="company" placeholder="Stark Industries" required type="text" autocomplete="organization"/>
+              <input class="input-brutal" id="form-company" name="company" placeholder="Stark Industries" required type="text"/>
               <p class="text-[10px] mt-1 hidden" id="error-company" style="color: #FF3B3B; font-family: 'JetBrains Mono', monospace;">Company name is required.</p>
             </div>
           </div>
           <div>
             <label class="input-label" for="form-email">Email Address *</label>
-            <input class="input-brutal" id="form-email" name="email" placeholder="tony@stark.com" required type="email" autocomplete="email"/>
+            <input class="input-brutal" id="form-email" name="email" placeholder="tony@stark.com" required type="email"/>
             <p class="text-[10px] mt-1 hidden" id="error-email" style="color: #FF3B3B; font-family: 'JetBrains Mono', monospace;">Please enter a valid email address.</p>
           </div>
           <div>
@@ -702,13 +690,15 @@
         </form>
       </div>
 
-      <div class="absolute inset-0 bg-black flex-col items-center justify-center p-12 text-center form-state-hidden" id="form-loading" style="display: none;">
+      <!-- Loading State -->
+      <div class="absolute inset-0 flex-col items-center justify-center p-12 text-center form-state-hidden" id="form-loading" style="display: none; background-color: #1A1A1A;">
         <div class="w-16 h-16 border-4 border-primary-container border-t-transparent rounded-full animate-spin-custom mb-6" style="border-color: #ffe000 transparent transparent transparent;"></div>
         <p class="uppercase" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px; color: #ffe000;">Processing Your Signal...</p>
         <p class="text-xs mt-4" style="font-family: 'JetBrains Mono', monospace; color: #cec6ab;">Transmitting data to studio@obsedian.in and preparing your receipt.</p>
       </div>
 
-      <div class="absolute inset-0 bg-black flex-col items-center justify-center p-12 text-center form-state-hidden" id="form-success" style="display: none;">
+      <!-- Success State -->
+      <div class="absolute inset-0 flex-col items-center justify-center p-12 text-center form-state-hidden" id="form-success" style="display: none; background-color: #1A1A1A;">
         <span class="material-symbols-outlined mb-6" style="color: #ffe000; font-size: 72px;">check_circle</span>
         <h3 class="uppercase mb-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 36px; line-height: 44px; color: #ffe000;">BRIEF RECEIVED</h3>
         <p class="mb-8" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 18px; line-height: 28px; color: #e2e2e2;">We've received your brief and sent a confirmation receipt to your inbox. An analyst will review your requirements and reach out within 4 hours.</p>
@@ -725,7 +715,8 @@
         <button class="mt-12 uppercase text-xs underline hover:text-white" onclick="resetForm()" style="font-family: 'JetBrains Mono', monospace; color: #ffe000; background: none; border: none; cursor: pointer;">Send another signal</button>
       </div>
 
-      <div class="absolute inset-0 bg-black flex-col items-center justify-center p-12 text-center form-state-hidden" id="form-error" style="display: none;">
+      <!-- Error State -->
+      <div class="absolute inset-0 flex-col items-center justify-center p-12 text-center form-state-hidden" id="form-error" style="display: none; background-color: #1A1A1A;">
         <span class="material-symbols-outlined mb-6" style="color: #FF3B3B; font-size: 72px;">report</span>
         <h3 class="uppercase mb-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 36px; line-height: 44px; color: #FF3B3B;">SIGNAL FAILED</h3>
         <p class="mb-8" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 18px; line-height: 28px; color: #e2e2e2;">Something went wrong while processing your brief. Our systems might be experiencing heavy load.</p>
@@ -766,7 +757,6 @@
 </footer>
 
 <script>
-  // Mobile menu toggle
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   if (mobileBtn && mobileMenu) {
@@ -778,7 +768,7 @@
     });
   }
 
-  // Smooth scroll with offset for fixed nav
+  // Smooth scroll with focus on form when reached via pricing buttons
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
@@ -786,67 +776,25 @@
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-        const navHeight = 96; // fixed nav height
-        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        
+        // If clicking pricing button, focus first form field after scroll
+        if (this.classList.contains('pricing-btn') && href === '#contact') {
+          setTimeout(() => {
+            const nameField = document.getElementById('form-name');
+            if (nameField) nameField.focus();
+          }, 800);
+        }
       }
     });
   });
 
-  // Ticker pause on hover
   const ticker = document.querySelector('.animate-infinite-scroll');
   if (ticker) {
     ticker.addEventListener('mouseover', () => ticker.style.animationPlayState = 'paused');
     ticker.addEventListener('mouseleave', () => ticker.style.animationPlayState = 'running');
   }
 
-  // Pricing button ripple effect
-  document.querySelectorAll('.pricing-btn').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-      // Create ripple
-      const ripple = document.createElement('span');
-      const rect = this.getBoundingClientRect();
-      const size = Math.max(rect.width, rect.height);
-      const x = e.clientX - rect.left - size / 2;
-      const y = e.clientY - rect.top - size / 2;
-      
-      ripple.style.cssText = `
-        position: absolute;
-        width: ${size}px;
-        height: ${size}px;
-        left: ${x}px;
-        top: ${y}px;
-        background: rgba(255, 224, 0, 0.4);
-        border-radius: 50%;
-        transform: scale(0);
-        animation: rippleEffect 600ms ease-out;
-        pointer-events: none;
-      `;
-      
-      this.style.position = 'relative';
-      this.style.overflow = 'hidden';
-      this.appendChild(ripple);
-      
-      setTimeout(() => ripple.remove(), 600);
-    });
-  });
-
-  // Add ripple keyframes
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes rippleEffect {
-      to {
-        transform: scale(2.5);
-        opacity: 0;
-      }
-    }
-  `;
-  document.head.appendChild(style);
-
-  // Lead Form Logic
   const leadForm = document.getElementById('lead-form');
   const formContent = document.getElementById('form-content');
   const formLoading = document.getElementById('form-loading');
