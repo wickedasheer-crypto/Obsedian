@@ -185,7 +185,7 @@
     transition: all 300ms ease;
   }
   
-  /* Form inputs - BLACK text on yellow background */
+  /* Input fields - BLACK text on yellow background */
   .input-brutal {
     background-color: #000000;
     border: none;
@@ -197,17 +197,27 @@
     width: 100%;
     padding: 8px 0;
     outline: none;
-    transition: border-color 200ms ease;
+    transition: border-color 200ms ease, color 200ms ease;
     border-radius: 0;
-    caret-color: #ffe000;
   }
+  /* Yellow background override on form - ensures black text always */
+  .bg-primary-container .input-brutal,
+  .bg-primary-container input.input-brutal,
+  .bg-primary-container select.input-brutal,
+  .bg-primary-container textarea.input-brutal {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
+  .bg-primary-container input.input-brutal::placeholder,
+  .bg-primary-container textarea.input-brutal::placeholder {
+    color: #999999 !important;
+  }
+  
   .input-brutal:focus {
-    border-bottom-color: #fffcff;
-    color: #000000;
-    background-color: #1a1a1a;
+    border-bottom-color: #ffe000;
   }
   .input-brutal::placeholder {
-    color: #666666;
+    color: #888888;
   }
   
   .input-label {
@@ -223,7 +233,7 @@
   }
   
   select.input-brutal {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000000'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 0 center;
     background-size: 20px;
@@ -233,86 +243,10 @@
     padding-right: 24px;
   }
   
-  /* Pricing buttons - with click animation */
-  .pricing-btn {
-    display: block;
-    text-align: center;
-    width: 100%;
-    padding: 12px 0;
-    border: 2px solid;
-    font-family: 'Oswald', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    text-transform: uppercase;
-    background: transparent;
-    cursor: pointer;
-    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-    text-decoration: none;
-  }
-  .pricing-btn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
-  }
-  .pricing-btn:active::before {
-    width: 300px;
-    height: 300px;
-  }
-  .pricing-btn:active {
-    transform: scale(0.93);
-  }
-  .pricing-btn-yellow {
-    border-color: #ffe000;
-    color: #ffe000;
-  }
-  .pricing-btn-yellow:hover {
-    background-color: #ffe000;
-    color: #000000;
-    box-shadow: 0 0 20px rgba(255, 224, 0, 0.5);
-  }
-  .pricing-btn-cyan {
-    border-color: #00C8E0;
-    color: #00C8E0;
-  }
-  .pricing-btn-cyan:hover {
-    background-color: #00C8E0;
-    color: #000000;
-    box-shadow: 0 0 20px rgba(0, 200, 224, 0.5);
-  }
-  .pricing-btn-white {
-    border-color: #e2e2e2;
-    color: #e2e2e2;
-  }
-  .pricing-btn-white:hover {
-    background-color: #e2e2e2;
-    color: #000000;
-    box-shadow: 0 0 20px rgba(226, 226, 226, 0.5);
-  }
-  .pricing-btn-filled {
-    background-color: #ffe000;
-    color: #000000;
-    border: none;
-  }
-  .pricing-btn-filled:hover {
-    background-color: #ffffff;
-    box-shadow: 0 0 20px rgba(255, 224, 0, 0.7);
-  }
-  
-  /* Form state hidden */
   .form-state-hidden {
     display: none !important;
   }
   
-  /* Spin animation */
   @keyframes spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
@@ -321,7 +255,6 @@
     animation: spin 1s linear infinite;
   }
   
-  /* Ticker scroll */
   @keyframes infinite-scroll {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
@@ -334,6 +267,33 @@
   .animate-infinite-scroll > span {
     padding-right: 3rem;
     white-space: nowrap;
+  }
+  
+  /* Pricing button click animation */
+  .pricing-btn {
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    user-select: none;
+  }
+  .pricing-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 224, 0, 0.3);
+  }
+  .pricing-btn:active {
+    transform: scale(0.92) translateY(0);
+    box-shadow: 0 2px 4px rgba(255, 224, 0, 0.2);
+  }
+  .pricing-btn-cyan:hover {
+    box-shadow: 0 4px 12px rgba(0, 200, 224, 0.3);
+  }
+  .pricing-btn-cyan:active {
+    box-shadow: 0 2px 4px rgba(0, 200, 224, 0.2);
+  }
+  .pricing-btn-white:hover {
+    box-shadow: 0 4px 12px rgba(226, 226, 226, 0.3);
+  }
+  .pricing-btn-white:active {
+    box-shadow: 0 2px 4px rgba(226, 226, 226, 0.2);
   }
   
   @media (max-width: 768px) {
@@ -368,16 +328,6 @@
   
   a.no-underline {
     text-decoration: none !important;
-  }
-  
-  /* Highlight form section when scrolled to */
-  @keyframes pulse-highlight {
-    0% { box-shadow: 0 0 0 0 rgba(255, 224, 0, 0.7); }
-    50% { box-shadow: 0 0 0 20px rgba(255, 224, 0, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(255, 224, 0, 0); }
-  }
-  .form-highlight {
-    animation: pulse-highlight 1.5s ease-out;
   }
 </style>
 </head>
@@ -616,6 +566,7 @@
 
   <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
 
+    <!-- Package 1 - CGI Starter -->
     <div class="border border-surface-variant p-8 flex flex-col hover:border-primary-container transition-all group">
       <span class="bg-primary-container text-on-primary-container px-2 py-0.5 text-[10px] font-bold uppercase self-start mb-6" style="font-family: 'JetBrains Mono', monospace;">Most Popular</span>
       <h3 class="uppercase mb-2" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px;">CGI STARTER</h3>
@@ -626,9 +577,10 @@
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> 2 Revision Rounds</li>
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> 4K Resolution Output</li>
       </ul>
-      <a href="#contact" class="pricing-btn pricing-btn-yellow">Get a Quote</a>
+      <a href="#contact" class="pricing-btn block text-center w-full py-3 border-2 font-bold uppercase no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #ffe000; color: #ffe000; background: transparent;">Get a Quote</a>
     </div>
 
+    <!-- Package 2 - XR Starter -->
     <div class="border border-surface-variant p-8 flex flex-col hover:border-electric-cyan transition-all group">
       <span class="bg-electric-cyan text-white px-2 py-0.5 text-[10px] font-bold uppercase self-start mb-6" style="font-family: 'JetBrains Mono', monospace;">Cutting Edge</span>
       <h3 class="uppercase mb-2" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px;">XR STARTER</h3>
@@ -639,9 +591,10 @@
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #00C8E0; font-size: 18px;">check</span> Mobile &amp; Desktop Ready</li>
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #00C8E0; font-size: 18px;">check</span> 3 Months Hosting</li>
       </ul>
-      <a href="#contact" class="pricing-btn pricing-btn-cyan">Get a Quote</a>
+      <a href="#contact" class="pricing-btn pricing-btn-cyan block text-center w-full py-3 border-2 font-bold uppercase no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #00C8E0; color: #00C8E0; background: transparent;">Get a Quote</a>
     </div>
 
+    <!-- Package 3 - Pipeline Pro (Featured) -->
     <div class="border-2 p-8 flex flex-col hover:border-primary-container transition-all group scale-100 md:scale-105 bg-surface-container-low" style="border-color: rgba(255, 224, 0, 0.5);">
       <span class="bg-primary-container text-on-primary-container px-2 py-0.5 text-[10px] font-bold uppercase self-start mb-6" style="font-family: 'JetBrains Mono', monospace;">Best ROI</span>
       <h3 class="uppercase mb-2" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px;">PIPELINE PRO</h3>
@@ -652,9 +605,10 @@
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> 5-Step Email Sequence</li>
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> CRM Dashboard Setup</li>
       </ul>
-      <a href="#contact" class="pricing-btn pricing-btn-filled">Launch Funnel</a>
+      <a href="#contact" class="pricing-btn block text-center w-full py-3 bg-primary-container text-black font-bold uppercase no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border: none;">Launch Funnel</a>
     </div>
 
+    <!-- Package 4 - Growth Starter -->
     <div class="border border-surface-variant p-8 flex flex-col hover:border-primary transition-all group">
       <span class="bg-surface-variant text-on-surface px-2 py-0.5 text-[10px] font-bold uppercase self-start mb-6" style="font-family: 'JetBrains Mono', monospace;">Scale Mode</span>
       <h3 class="uppercase mb-2" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px;">GROWTH STARTER</h3>
@@ -665,7 +619,7 @@
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #e2e2e2; font-size: 18px;">check</span> Weekly Performance Reports</li>
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #e2e2e2; font-size: 18px;">check</span> Dedicated Strategist</li>
       </ul>
-      <a href="#contact" class="pricing-btn pricing-btn-white">Get a Quote</a>
+      <a href="#contact" class="pricing-btn pricing-btn-white block text-center w-full py-3 border-2 font-bold uppercase no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #e2e2e2; color: #e2e2e2; background: transparent;">Get a Quote</a>
     </div>
   </div>
 
@@ -695,25 +649,25 @@
       </div>
     </div>
 
-    <div id="contact-form-wrapper" class="bg-black p-8 md:p-12 border-4 border-black relative min-h-[600px]">
+    <div class="bg-black p-8 md:p-12 border-4 border-black relative min-h-[600px]">
       <div id="form-content">
         <h3 class="uppercase mb-8" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 30px; line-height: 38px; color: #ffe000;">SEND THE SIGNAL</h3>
         <form action="https://formspree.io/f/xrevkgep" class="space-y-8" id="lead-form" method="POST" novalidate>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <label class="input-label" for="form-name">Your Name *</label>
-              <input class="input-brutal" id="form-name" name="name" placeholder="Tony Stark" required type="text"/>
+              <input class="input-brutal" id="form-name" name="name" placeholder="Tony Stark" required type="text" autocomplete="name"/>
               <p class="text-[10px] mt-1 hidden" id="error-name" style="color: #FF3B3B; font-family: 'JetBrains Mono', monospace;">Full name is required.</p>
             </div>
             <div>
               <label class="input-label" for="form-company">Company *</label>
-              <input class="input-brutal" id="form-company" name="company" placeholder="Stark Industries" required type="text"/>
+              <input class="input-brutal" id="form-company" name="company" placeholder="Stark Industries" required type="text" autocomplete="organization"/>
               <p class="text-[10px] mt-1 hidden" id="error-company" style="color: #FF3B3B; font-family: 'JetBrains Mono', monospace;">Company name is required.</p>
             </div>
           </div>
           <div>
             <label class="input-label" for="form-email">Email Address *</label>
-            <input class="input-brutal" id="form-email" name="email" placeholder="tony@stark.com" required type="email"/>
+            <input class="input-brutal" id="form-email" name="email" placeholder="tony@stark.com" required type="email" autocomplete="email"/>
             <p class="text-[10px] mt-1 hidden" id="error-email" style="color: #FF3B3B; font-family: 'JetBrains Mono', monospace;">Please enter a valid email address.</p>
           </div>
           <div>
@@ -739,7 +693,7 @@
           </div>
           <div>
             <label class="input-label" for="form-description">Tell us about your project *</label>
-            <textarea class="input-brutal h-32 resize-none" id="form-description" name="message" placeholder="I need a high-conversion sales funnel for our new product launch..." required style="font-family: 'Hanken Grotesk', sans-serif; color: #000000;"></textarea>
+            <textarea class="input-brutal h-32 resize-none" id="form-description" name="message" placeholder="I need a high-conversion sales funnel for our new product launch..." required></textarea>
             <p class="text-[10px] mt-1 hidden" id="error-description" style="color: #FF3B3B; font-family: 'JetBrains Mono', monospace;">Project details are required (min 20 chars).</p>
           </div>
           <button class="w-full font-bold uppercase py-4 text-xl hover:bg-white transition-all transform active:scale-95 flex items-center justify-center gap-3" id="submit-btn" type="submit" style="font-family: 'Oswald', sans-serif; background-color: #ffe000; color: #000; border: none; cursor: pointer;">
@@ -812,7 +766,7 @@
 </footer>
 
 <script>
-  // Mobile menu
+  // Mobile menu toggle
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   if (mobileBtn && mobileMenu) {
@@ -824,7 +778,7 @@
     });
   }
 
-  // Smooth scroll with form highlight animation
+  // Smooth scroll with offset for fixed nav
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
@@ -832,33 +786,65 @@
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        
-        // Highlight the contact form when scrolled to
-        if (href === '#contact') {
-          setTimeout(() => {
-            const formWrapper = document.getElementById('contact-form-wrapper');
-            if (formWrapper) {
-              formWrapper.classList.add('form-highlight');
-              setTimeout(() => formWrapper.classList.remove('form-highlight'), 1500);
-            }
-            // Auto-focus first field
-            const nameInput = document.getElementById('form-name');
-            if (nameInput) {
-              setTimeout(() => nameInput.focus({ preventScroll: true }), 600);
-            }
-          }, 800);
-        }
+        const navHeight = 96; // fixed nav height
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
       }
     });
   });
 
-  // Ticker pause
+  // Ticker pause on hover
   const ticker = document.querySelector('.animate-infinite-scroll');
   if (ticker) {
     ticker.addEventListener('mouseover', () => ticker.style.animationPlayState = 'paused');
     ticker.addEventListener('mouseleave', () => ticker.style.animationPlayState = 'running');
   }
+
+  // Pricing button ripple effect
+  document.querySelectorAll('.pricing-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      // Create ripple
+      const ripple = document.createElement('span');
+      const rect = this.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      const x = e.clientX - rect.left - size / 2;
+      const y = e.clientY - rect.top - size / 2;
+      
+      ripple.style.cssText = `
+        position: absolute;
+        width: ${size}px;
+        height: ${size}px;
+        left: ${x}px;
+        top: ${y}px;
+        background: rgba(255, 224, 0, 0.4);
+        border-radius: 50%;
+        transform: scale(0);
+        animation: rippleEffect 600ms ease-out;
+        pointer-events: none;
+      `;
+      
+      this.style.position = 'relative';
+      this.style.overflow = 'hidden';
+      this.appendChild(ripple);
+      
+      setTimeout(() => ripple.remove(), 600);
+    });
+  });
+
+  // Add ripple keyframes
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes rippleEffect {
+      to {
+        transform: scale(2.5);
+        opacity: 0;
+      }
+    }
+  `;
+  document.head.appendChild(style);
 
   // Lead Form Logic
   const leadForm = document.getElementById('lead-form');
