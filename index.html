@@ -136,6 +136,9 @@
     background-color: #fffcff;
     color: #131313;
   }
+  .btn-primary:active {
+    transform: scale(0.95);
+  }
   
   .btn-secondary {
     border: 2px solid #fffcff;
@@ -159,6 +162,47 @@
     background-color: #fffcff;
     color: #131313;
   }
+  .btn-secondary:active {
+    transform: scale(0.95);
+  }
+  
+  /* Pricing button with click animation */
+  .pricing-btn {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 12px 0;
+    border: 2px solid;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 200ms ease;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+  }
+  .pricing-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+  .pricing-btn:active::before {
+    width: 300px;
+    height: 300px;
+  }
+  .pricing-btn:active {
+    transform: scale(0.96);
+  }
   
   .power-card {
     background-color: #1A1A1A;
@@ -179,33 +223,37 @@
     transition: all 300ms ease;
   }
   
-  /* Form Card - GRAY with WHITE input background */
-  .form-card {
-    background-color: #1A1A1A;
-    border: 4px solid #000000;
+  /* Form input box - grey background, white box for input */
+  .input-wrapper {
+    background-color: #f5f5f5;
+    padding: 4px 8px;
+    border: 1px solid #cccccc;
+    transition: all 200ms ease;
+  }
+  .input-wrapper:focus-within {
+    border-color: #000000;
+    background-color: #ffffff;
   }
   
-  /* Input Brutal Style - WHITE background, BLACK text on type */
   .input-brutal {
     background-color: #ffffff;
-    border: 2px solid #ffffff;
+    border: none;
     color: #000000;
     font-family: 'Hanken Grotesk', sans-serif;
     font-size: 16px;
     line-height: 24px;
     width: 100%;
-    padding: 12px 16px;
+    padding: 8px 4px;
     outline: none;
     transition: all 200ms ease;
     border-radius: 0;
   }
   .input-brutal:focus {
-    border-color: #ffe000;
     background-color: #ffffff;
     color: #000000;
   }
   .input-brutal::placeholder {
-    color: #888888;
+    color: #999999;
   }
   
   .input-label {
@@ -214,7 +262,7 @@
     line-height: 20px;
     letter-spacing: 0.05em;
     font-weight: 500;
-    color: #ffe000;
+    color: #000000;
     text-transform: uppercase;
     margin-bottom: 8px;
     display: block;
@@ -223,12 +271,13 @@
   select.input-brutal {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000000'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: right 12px center;
+    background-position: right 8px center;
     background-size: 20px;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    padding-right: 40px;
+    padding-right: 32px;
+    cursor: pointer;
   }
   
   .form-state-hidden {
@@ -255,32 +304,6 @@
   .animate-infinite-scroll > span {
     padding-right: 3rem;
     white-space: nowrap;
-  }
-  
-  /* Pricing button click animation */
-  .pricing-btn {
-    position: relative;
-    overflow: hidden;
-    transition: all 300ms ease;
-  }
-  .pricing-btn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.4);
-    transform: translate(-50%, -50%);
-    transition: width 600ms ease, height 600ms ease;
-  }
-  .pricing-btn:active::before {
-    width: 400px;
-    height: 400px;
-  }
-  .pricing-btn:active {
-    transform: scale(0.95);
   }
   
   @media (max-width: 768px) {
@@ -429,7 +452,6 @@
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-    <!-- 01 CGI -->
     <div class="power-card group">
       <span class="absolute top-4 right-8 font-headline-lg text-surface-container opacity-20" style="font-family: 'Oswald', sans-serif; font-size: 48px; line-height: 56px; font-weight: 600;">01</span>
       <span class="material-symbols-outlined card-icon text-4xl mb-6 block transition-all" style="font-variation-settings: 'FILL' 1; font-size: 40px;">ads_click</span>
@@ -442,7 +464,6 @@
       </ul>
     </div>
 
-    <!-- 02 Immersive XR -->
     <div class="power-card group">
       <span class="absolute top-4 right-8 font-headline-lg text-surface-container opacity-20" style="font-family: 'Oswald', sans-serif; font-size: 48px; line-height: 56px; font-weight: 600;">02</span>
       <span class="material-symbols-outlined card-icon text-4xl mb-6 block transition-all" style="font-size: 40px;">view_in_ar</span>
@@ -455,7 +476,6 @@
       </ul>
     </div>
 
-    <!-- 03 Sales Pipeline -->
     <div class="power-card group" style="border-color: rgba(255, 224, 0, 0.3);">
       <span class="absolute top-4 right-8 font-headline-lg text-surface-container opacity-20" style="font-family: 'Oswald', sans-serif; font-size: 48px; line-height: 56px; font-weight: 600;">03</span>
       <span class="material-symbols-outlined card-icon text-4xl mb-6 block transition-all" style="font-variation-settings: 'FILL' 1; font-size: 40px;">account_tree</span>
@@ -468,7 +488,6 @@
       </ul>
     </div>
 
-    <!-- 04 Growth Strategy -->
     <div class="power-card group">
       <span class="absolute top-4 right-8 font-headline-lg text-surface-container opacity-20" style="font-family: 'Oswald', sans-serif; font-size: 48px; line-height: 56px; font-weight: 600;">04</span>
       <span class="material-symbols-outlined card-icon text-4xl mb-6 block transition-all" style="font-size: 40px;">trending_up</span>
@@ -553,7 +572,6 @@
 
   <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
 
-    <!-- Package 1 -->
     <div class="border border-surface-variant p-8 flex flex-col hover:border-primary-container transition-all group">
       <span class="bg-primary-container text-on-primary-container px-2 py-0.5 text-[10px] font-bold uppercase self-start mb-6" style="font-family: 'JetBrains Mono', monospace;">Most Popular</span>
       <h3 class="uppercase mb-2" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px;">CGI STARTER</h3>
@@ -564,10 +582,9 @@
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> 2 Revision Rounds</li>
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> 4K Resolution Output</li>
       </ul>
-      <a href="#contact" class="pricing-btn block text-center w-full py-3 border-2 font-bold uppercase group-hover:bg-primary-container group-hover:text-black transition-all no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #ffe000; color: #ffe000; background: transparent;">Get a Quote</a>
+      <a href="#contact" class="pricing-btn no-underline" style="border-color: #ffe000; color: #ffe000; background: transparent;">Get a Quote</a>
     </div>
 
-    <!-- Package 2 -->
     <div class="border border-surface-variant p-8 flex flex-col hover:border-electric-cyan transition-all group">
       <span class="bg-electric-cyan text-white px-2 py-0.5 text-[10px] font-bold uppercase self-start mb-6" style="font-family: 'JetBrains Mono', monospace;">Cutting Edge</span>
       <h3 class="uppercase mb-2" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px;">XR STARTER</h3>
@@ -578,10 +595,9 @@
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #00C8E0; font-size: 18px;">check</span> Mobile &amp; Desktop Ready</li>
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #00C8E0; font-size: 18px;">check</span> 3 Months Hosting</li>
       </ul>
-      <a href="#contact" class="pricing-btn block text-center w-full py-3 border-2 font-bold uppercase group-hover:bg-electric-cyan group-hover:text-black transition-all no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #00C8E0; color: #00C8E0; background: transparent;">Get a Quote</a>
+      <a href="#contact" class="pricing-btn no-underline" style="border-color: #00C8E0; color: #00C8E0; background: transparent;">Get a Quote</a>
     </div>
 
-    <!-- Package 3 - Featured -->
     <div class="border-2 p-8 flex flex-col hover:border-primary-container transition-all group scale-100 md:scale-105 bg-surface-container-low" style="border-color: rgba(255, 224, 0, 0.5);">
       <span class="bg-primary-container text-on-primary-container px-2 py-0.5 text-[10px] font-bold uppercase self-start mb-6" style="font-family: 'JetBrains Mono', monospace;">Best ROI</span>
       <h3 class="uppercase mb-2" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px;">PIPELINE PRO</h3>
@@ -592,10 +608,9 @@
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> 5-Step Email Sequence</li>
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #ffe000; font-size: 18px;">check</span> CRM Dashboard Setup</li>
       </ul>
-      <a href="#contact" class="pricing-btn block text-center w-full py-3 bg-primary-container text-black font-bold uppercase hover:bg-white transition-all no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border: none;">Launch Funnel</a>
+      <a href="#contact" class="pricing-btn no-underline" style="background-color: #ffe000; color: #000; border-color: #ffe000;">Launch Funnel</a>
     </div>
 
-    <!-- Package 4 -->
     <div class="border border-surface-variant p-8 flex flex-col hover:border-primary transition-all group">
       <span class="bg-surface-variant text-on-surface px-2 py-0.5 text-[10px] font-bold uppercase self-start mb-6" style="font-family: 'JetBrains Mono', monospace;">Scale Mode</span>
       <h3 class="uppercase mb-2" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px;">GROWTH STARTER</h3>
@@ -606,82 +621,94 @@
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #e2e2e2; font-size: 18px;">check</span> Weekly Performance Reports</li>
         <li class="flex items-center gap-2"><span class="material-symbols-outlined" style="color: #e2e2e2; font-size: 18px;">check</span> Dedicated Strategist</li>
       </ul>
-      <a href="#contact" class="pricing-btn block text-center w-full py-3 border-2 font-bold uppercase group-hover:bg-on-surface group-hover:text-black transition-all no-underline" style="font-family: 'Oswald', sans-serif; font-size: 18px; border-color: #e2e2e2; color: #e2e2e2; background: transparent;">Get a Quote</a>
+      <a href="#contact" class="pricing-btn no-underline" style="border-color: #e2e2e2; color: #e2e2e2; background: transparent;">Get a Quote</a>
     </div>
   </div>
 
   <p class="text-center text-on-surface-variant text-xs mt-12 italic opacity-60" style="font-family: 'JetBrains Mono', monospace;">* All packages are starting points. Custom scopes quoted within 24 hours.</p>
 </section>
 
-<!-- Contact Section - YELLOW background, GRAY form card with WHITE inputs -->
-<section class="bg-primary-container py-24 px-6 md:px-margin-desktop" id="contact">
+<!-- Contact Section - Yellow Background -->
+<section class="py-24 px-6 md:px-margin-desktop" id="contact" style="background-color: #ffe000;">
   <div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
     <div style="color: #716300;">
       <span class="bg-black text-white px-3 py-1 font-mono text-xs font-bold uppercase inline-block" style="font-family: 'JetBrains Mono', monospace;">Start Here</span>
-      <h2 class="uppercase mt-6 mb-8 leading-none" style="font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 80px; line-height: 90px; letter-spacing: -0.02em;">READY TO <br/> STAND OUT?</h2>
-      <p class="max-w-md mb-12" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 18px; line-height: 28px; opacity: 0.9;">Drop us a brief and we'll come back with a strategy doc and quote — no strings attached. Our typical response time is under 4 hours.</p>
+      <h2 class="uppercase mt-6 mb-8 leading-none" style="font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 80px; line-height: 90px; letter-spacing: -0.02em; color: #000;">READY TO <br/> STAND OUT?</h2>
+      <p class="max-w-md mb-12" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 18px; line-height: 28px; opacity: 0.9; color: #000;">Drop us a brief and we'll come back with a strategy doc and quote — no strings attached. Our typical response time is under 4 hours.</p>
       <div class="space-y-6">
         <div class="flex items-center gap-4">
           <span class="material-symbols-outlined bg-black p-3" style="color: #ffe000; border-radius: 50%;">mail</span>
-          <a href="mailto:studio@obsedian.in" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 20px; color: #716300; text-decoration: none;">studio@obsedian.in</a>
+          <a href="mailto:studio@obsedian.in" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 20px; color: #000; text-decoration: none;">studio@obsedian.in</a>
         </div>
         <div class="flex items-center gap-4">
           <span class="material-symbols-outlined bg-black p-3" style="color: #ffe000; border-radius: 50%;">call</span>
-          <a href="tel:+919324742958" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 20px; color: #716300; text-decoration: none;">+91 93247 42958</a>
+          <a href="tel:+919324742958" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 20px; color: #000; text-decoration: none;">+91 93247 42958</a>
         </div>
         <div class="flex items-center gap-4">
           <span class="material-symbols-outlined bg-black p-3" style="color: #ffe000; border-radius: 50%;">location_on</span>
-          <span style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 20px; color: #716300;">Mumbai, India</span>
+          <span style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 20px; color: #000;">Mumbai, India</span>
         </div>
       </div>
     </div>
 
-    <!-- GRAY form card with WHITE input fields -->
-    <div class="form-card p-8 md:p-12 relative min-h-[600px]">
+    <!-- Form - Grey Container with White Input Boxes -->
+    <div class="p-8 md:p-12 border-4 border-black relative min-h-[600px]" style="background-color: #2a2a2a;">
       <div id="form-content">
         <h3 class="uppercase mb-8" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 30px; line-height: 38px; color: #ffe000;">SEND THE SIGNAL</h3>
         <form action="https://formspree.io/f/xrevkgep" class="space-y-6" id="lead-form" method="POST" novalidate>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label class="input-label" for="form-name">Your Name *</label>
-              <input class="input-brutal" id="form-name" name="name" placeholder="Tony Stark" required type="text"/>
+              <div class="input-wrapper">
+                <input class="input-brutal" id="form-name" name="name" placeholder="Tony Stark" required type="text"/>
+              </div>
               <p class="text-[10px] mt-1 hidden" id="error-name" style="color: #FF3B3B; font-family: 'JetBrains Mono', monospace;">Full name is required.</p>
             </div>
             <div>
               <label class="input-label" for="form-company">Company *</label>
-              <input class="input-brutal" id="form-company" name="company" placeholder="Stark Industries" required type="text"/>
+              <div class="input-wrapper">
+                <input class="input-brutal" id="form-company" name="company" placeholder="Stark Industries" required type="text"/>
+              </div>
               <p class="text-[10px] mt-1 hidden" id="error-company" style="color: #FF3B3B; font-family: 'JetBrains Mono', monospace;">Company name is required.</p>
             </div>
           </div>
           <div>
             <label class="input-label" for="form-email">Email Address *</label>
-            <input class="input-brutal" id="form-email" name="email" placeholder="tony@stark.com" required type="email"/>
+            <div class="input-wrapper">
+              <input class="input-brutal" id="form-email" name="email" placeholder="tony@stark.com" required type="email"/>
+            </div>
             <p class="text-[10px] mt-1 hidden" id="error-email" style="color: #FF3B3B; font-family: 'JetBrains Mono', monospace;">Please enter a valid email address.</p>
           </div>
           <div>
             <label class="input-label" for="form-service">Service you're interested in *</label>
-            <select class="input-brutal" id="form-service" name="service" required>
-              <option value="">— SELECT A SERVICE —</option>
-              <option value="cgi">CGI &amp; 3D Visualization</option>
-              <option value="xr">Immersive Experiences (XR)</option>
-              <option value="pipeline">Sales Pipeline</option>
-              <option value="growth">Growth Strategy</option>
-            </select>
+            <div class="input-wrapper">
+              <select class="input-brutal" id="form-service" name="service" required>
+                <option value="">— SELECT A SERVICE —</option>
+                <option value="cgi">CGI &amp; 3D Visualization</option>
+                <option value="xr">Immersive Experiences (XR)</option>
+                <option value="pipeline">Sales Pipeline</option>
+                <option value="growth">Growth Strategy</option>
+              </select>
+            </div>
             <p class="text-[10px] mt-1 hidden" id="error-service" style="color: #FF3B3B; font-family: 'JetBrains Mono', monospace;">Please select a service.</p>
           </div>
           <div>
             <label class="input-label" for="form-budget">Approximate Budget</label>
-            <select class="input-brutal" id="form-budget" name="budget">
-              <option value="">— SELECT A RANGE —</option>
-              <option value="under25k">Under ₹25,000</option>
-              <option value="25k-75k">₹25,000 – ₹75,000</option>
-              <option value="75k-200k">₹75,000 – ₹2,00,000</option>
-              <option value="above200k">Above ₹2,00,000</option>
-            </select>
+            <div class="input-wrapper">
+              <select class="input-brutal" id="form-budget" name="budget">
+                <option value="">— SELECT A RANGE —</option>
+                <option value="under25k">Under ₹25,000</option>
+                <option value="25k-75k">₹25,000 – ₹75,000</option>
+                <option value="75k-200k">₹75,000 – ₹2,00,000</option>
+                <option value="above200k">Above ₹2,00,000</option>
+              </select>
+            </div>
           </div>
           <div>
             <label class="input-label" for="form-description">Tell us about your project *</label>
-            <textarea class="input-brutal h-32 resize-none" id="form-description" name="message" placeholder="I need a high-conversion sales funnel for our new product launch..." required></textarea>
+            <div class="input-wrapper">
+              <textarea class="input-brutal h-32 resize-none" id="form-description" name="message" placeholder="I need a high-conversion sales funnel for our new product launch..." required></textarea>
+            </div>
             <p class="text-[10px] mt-1 hidden" id="error-description" style="color: #FF3B3B; font-family: 'JetBrains Mono', monospace;">Project details are required (min 20 chars).</p>
           </div>
           <button class="w-full font-bold uppercase py-4 text-xl hover:bg-white transition-all transform active:scale-95 flex items-center justify-center gap-3" id="submit-btn" type="submit" style="font-family: 'Oswald', sans-serif; background-color: #ffe000; color: #000; border: none; cursor: pointer;">
@@ -690,15 +717,13 @@
         </form>
       </div>
 
-      <!-- Loading State -->
-      <div class="absolute inset-0 flex-col items-center justify-center p-12 text-center form-state-hidden" id="form-loading" style="display: none; background-color: #1A1A1A;">
+      <div class="absolute inset-0 flex-col items-center justify-center p-12 text-center form-state-hidden" id="form-loading" style="display: none; background-color: #2a2a2a;">
         <div class="w-16 h-16 border-4 border-primary-container border-t-transparent rounded-full animate-spin-custom mb-6" style="border-color: #ffe000 transparent transparent transparent;"></div>
         <p class="uppercase" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 24px; line-height: 32px; color: #ffe000;">Processing Your Signal...</p>
         <p class="text-xs mt-4" style="font-family: 'JetBrains Mono', monospace; color: #cec6ab;">Transmitting data to studio@obsedian.in and preparing your receipt.</p>
       </div>
 
-      <!-- Success State -->
-      <div class="absolute inset-0 flex-col items-center justify-center p-12 text-center form-state-hidden" id="form-success" style="display: none; background-color: #1A1A1A;">
+      <div class="absolute inset-0 flex-col items-center justify-center p-12 text-center form-state-hidden" id="form-success" style="display: none; background-color: #2a2a2a;">
         <span class="material-symbols-outlined mb-6" style="color: #ffe000; font-size: 72px;">check_circle</span>
         <h3 class="uppercase mb-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 36px; line-height: 44px; color: #ffe000;">BRIEF RECEIVED</h3>
         <p class="mb-8" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 18px; line-height: 28px; color: #e2e2e2;">We've received your brief and sent a confirmation receipt to your inbox. An analyst will review your requirements and reach out within 4 hours.</p>
@@ -715,8 +740,7 @@
         <button class="mt-12 uppercase text-xs underline hover:text-white" onclick="resetForm()" style="font-family: 'JetBrains Mono', monospace; color: #ffe000; background: none; border: none; cursor: pointer;">Send another signal</button>
       </div>
 
-      <!-- Error State -->
-      <div class="absolute inset-0 flex-col items-center justify-center p-12 text-center form-state-hidden" id="form-error" style="display: none; background-color: #1A1A1A;">
+      <div class="absolute inset-0 flex-col items-center justify-center p-12 text-center form-state-hidden" id="form-error" style="display: none; background-color: #2a2a2a;">
         <span class="material-symbols-outlined mb-6" style="color: #FF3B3B; font-size: 72px;">report</span>
         <h3 class="uppercase mb-4" style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 36px; line-height: 44px; color: #FF3B3B;">SIGNAL FAILED</h3>
         <p class="mb-8" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 18px; line-height: 28px; color: #e2e2e2;">Something went wrong while processing your brief. Our systems might be experiencing heavy load.</p>
@@ -733,7 +757,7 @@
 
 </main>
 
-<!-- Footer (No Social Media Links) -->
+<!-- Footer (No Social Media) -->
 <footer class="bg-surface-container-lowest border-t-2 border-surface-variant py-16">
   <div class="grid grid-cols-1 md:grid-cols-12 gap-8 px-6 md:px-margin-desktop max-w-container-max mx-auto">
     <div class="md:col-span-6">
@@ -768,7 +792,6 @@
     });
   }
 
-  // Smooth scroll with focus on form when reached via pricing buttons
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
@@ -777,14 +800,6 @@
       if (target) {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        
-        // If clicking pricing button, focus first form field after scroll
-        if (this.classList.contains('pricing-btn') && href === '#contact') {
-          setTimeout(() => {
-            const nameField = document.getElementById('form-name');
-            if (nameField) nameField.focus();
-          }, 800);
-        }
       }
     });
   });
